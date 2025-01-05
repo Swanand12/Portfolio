@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import PortFolio from "./PortFolio";
+import { Toaster } from "react-hot-toast";
+import { FaArrowUp } from "react-icons/fa";
+import Sample from "./pages/Sample";
+import Resume from "./pages/Resume";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Toaster />
+        <Routes>
+          <Route path="/" element={<PortFolio />} />
+          <Route path="/s" element={<Sample />} />
+          <Route path="/resume" element={<Resume />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

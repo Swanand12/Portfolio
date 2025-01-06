@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { FaFileAlt } from "react-icons/fa";
 import { RiWhatsappFill } from "react-icons/ri";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { BiLogoGmail } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
-import logo_white_fill from "../assets/logo-white.png";
-import logo_white from "../assets/logo_white.svg";
-import about from "../assets/about-image.svg";
+import logo_white_fill from "../assets/logo_white_fill.png";
+import logo_white from "../assets/logo_white_outline.svg";
+import about from "../assets/about_image.svg";
 import mongo from "../assets/mongo.svg";
 import express from "../assets/express.svg";
 import react from "../assets/react.svg";
@@ -19,7 +19,6 @@ import MatterCanvas from "../particles/matter";
 
 const HeroPage = ({ setScroll }) => {
   const [showAboutModal, setShowAboutModal] = useState(false);
-  const [scrollToEnd, setScrollToEnd] = useState(false);
   const ref = useRef(null);
   const [liElementAnimation, setLiAnimation] = useState([
     false,
@@ -37,7 +36,7 @@ const HeroPage = ({ setScroll }) => {
   };
 
   const handleScroll = () => {
-    setScroll(true);
+    setScroll(-document.querySelector("body").clientHeight);
   };
 
   return (

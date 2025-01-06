@@ -1,16 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import h from "../assets/harigurus.webp";
 import Contact from "./Contact";
 import { motion } from "framer-motion";
 import { GoLinkExternal } from "react-icons/go";
-import { FaArrowUp } from "react-icons/fa";
+import hirrd from "../assets/hirrd.svg";
 
-const ContentPage = () => {
-  const ref = useRef(null);
-  useEffect(() => {
-    console.log("c:", ref.current.clientHeight);
-    console.log("o:", ref.current.offsetHeight);
-  }, [ref]);
+const ContentPage = ({ setScroll }) => {
   return (
     <>
       <div className="h-full relative font-Nunito  bg-white">
@@ -19,6 +14,7 @@ const ContentPage = () => {
             My Projects
           </h1>
         </div>
+
         {/* Projects */}
         <div className="projects relative px-5 w-full bg-white">
           {/* Project 1 */}
@@ -42,7 +38,7 @@ const ContentPage = () => {
                 </span>
                 <img
                   className="w-[400px] relative hover:scale-110 duration-300 z-20"
-                  src={h}
+                  src={hirrd}
                   alt="demo"
                 />
               </motion.div>
@@ -54,7 +50,6 @@ const ContentPage = () => {
                 className="absolute right-0 z-0 h-[2px] bg-[#B91C1C]"
               ></motion.div>
               <a
-                ref={ref}
                 className="absolute -right-2 border-[3px] border-[#B91C1C] rounded-full h-4 w-4 bg-white z-50"
                 href="https://job-portal-lhzj.onrender.com"
                 target="_blank"
@@ -440,7 +435,7 @@ const ContentPage = () => {
           ></motion.div>
         </div>
 
-        <Contact />
+        <Contact setScroll={setScroll} />
       </div>
     </>
   );

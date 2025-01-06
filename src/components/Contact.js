@@ -1,21 +1,20 @@
 import React, { useRef, useState } from "react";
 import { IoPerson } from "react-icons/io5";
-import { FaArrowUp, FaAt } from "react-icons/fa";
+import { FaAt } from "react-icons/fa";
 import { IoIosChatboxes } from "react-icons/io";
 import { FaTelegramPlane } from "react-icons/fa";
-import { FaPhoneAlt } from "react-icons/fa";
 import { RiWhatsappFill } from "react-icons/ri";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { BiLogoGmail } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import contact_img from "../assets/contact-me-image.svg";
-import logo from "../assets/logo.svg";
+import contact_img from "../assets/contact_image.svg";
+import logo from "../assets/logo_blue_outline.svg";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 
-const Contact = () => {
+const Contact = ({ setScroll }) => {
   const form = useRef();
   const [loading, setLoading] = useState(false);
 
@@ -137,8 +136,18 @@ const Contact = () => {
           <div className="group relative px-4">
             <img className="h-[3rem] cursor-pointer" src={logo} alt="logo" />
             <button
-              onClick={() => window.scrollBy({ top: 0, behavior: "smooth" })}
-              className="group-hover:flex hidden text-white absolute bg-[#1788AE] px-4 py-2 whitespace-nowrap top-2 text-sm font-semibold tracking wide left-[4rem] rounded-lg"
+              onClick={() => {
+                setScroll(
+                  document.querySelector("#root").scrollHeight -
+                    window.innerHeight
+                );
+
+                // window.scrollTo({
+                //   top: document.querySelector("#root").scrollHeight,
+                //   behavior: "instant",
+                // });
+              }}
+              className="group-hover:flex hidden text-white absolute bg-[#1788AE] px-4 py-2 whitespace-nowrap top-2 text-sm font-semibold tracking wide left-[4rem] rounded-lg before:content-[' '] before:absolute before:top-0 before:w-4 befor:h-4 befroe:z-50 before:bg-black"
             >
               Scroll to top
             </button>

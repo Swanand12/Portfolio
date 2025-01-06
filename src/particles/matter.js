@@ -102,9 +102,9 @@ const MatterCanvas = () => {
           s,
 
           {
-            mass: s / 20,
-            friction: 0.01,
-            frictionAir: 0.01,
+            mass: 10,
+            friction: 0.5,
+            frictionAir: 0.03,
             angle: Math.round(Math.random() * 360),
             render: {
               fillStyle: "#222222",
@@ -118,9 +118,9 @@ const MatterCanvas = () => {
 
         let r = Common.random(0, 1);
         var circle = Bodies.circle(x, y, Common.random(2, 8), {
-          mass: 0.1,
-          friction: 0.2,
-          frictionAir: 0,
+          mass: 10,
+          friction: 0.5,
+          frictionAir: 0.03,
           render: {
             fillStyle: r > 0.3 ? `#27292d` : `#444444`,
             strokeStyle: `#000000`,
@@ -132,7 +132,7 @@ const MatterCanvas = () => {
 
         var circle = Bodies.circle(x, y, Common.random(2, 10), {
           mass: 6,
-          friction: 0.1,
+          friction: 0,
           frictionAir: 0,
           render: {
             fillStyle: r > 0.3 ? `#334443` : `#222222`,
@@ -144,9 +144,9 @@ const MatterCanvas = () => {
         World.add(world, circle);
 
         var circle = Bodies.circle(x, y, Common.random(10, 30), {
-          mass: 0.4,
-          friction: 0,
-          frictionAir: 0,
+          mass: 10,
+          friction: 0.5,
+          frictionAir: 0.03,
           render: {
             fillStyle: `#191919`,
             strokeStyle: `#111111`,
@@ -178,7 +178,7 @@ const MatterCanvas = () => {
 
           if (distanceSq < 100) return; // Avoid applying force if bodies are very close
 
-          const forceMagnitude = (0.1 * body.mass) / distanceSq;
+          const forceMagnitude = (0.2 * body.mass) / distanceSq;
 
           const force = {
             x: deltaX * forceMagnitude,

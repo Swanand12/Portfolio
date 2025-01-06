@@ -31,3 +31,10 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+
+@layer utilities {
+  .custom {
+    -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}

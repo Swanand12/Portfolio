@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import h from "../assets/harigurus.webp";
 import Contact from "./Contact";
 import { motion } from "framer-motion";
@@ -6,6 +6,13 @@ import { GoLinkExternal } from "react-icons/go";
 import hirrd from "../assets/hirrd.svg";
 
 const ContentPage = ({ setScroll }) => {
+  const [tooltipAnimation, setTooltipAnimation] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
   return (
     <>
       <div className="h-full relative font-Nunito  bg-white">
@@ -160,11 +167,36 @@ const ContentPage = ({ setScroll }) => {
               <motion.div
                 className="w-[fit-content] ml-auto cursor-pointer group relative pr-5"
                 initial={{ opacity: 0, x: 70 }}
+                onHoverStart={() =>
+                  setTooltipAnimation((prev) => {
+                    const updated = [...prev];
+                    updated[1] = true;
+                    return updated;
+                  })
+                }
+                onHoverEnd={() =>
+                  setTooltipAnimation((prev) => {
+                    const updated = [...prev];
+                    updated[1] = false;
+                    return updated;
+                  })
+                }
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.7 }}
                 transition={{ duration: 0.9, ease: "easeInOut" }}
               >
-                <span className='cursor-pointer w-[fit-content] group-hover:-top-11 ease-custom transition-transform duration-500 bg-[#36D9C4] absolute top-14 left-1/2 -translate-x-1/2 px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#36D9C4] after:absolute after:rotate-45 after:top-7  '>
+                <motion.span
+                  initial={{ y: 300, opacity: 0 }}
+                  animate={{
+                    y: tooltipAnimation[1] ? 0 : 300,
+                    opacity: tooltipAnimation[1] ? 1 : 0,
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    ease: [0.68, -0.55, 0.265, 1.55],
+                  }}
+                  className='cursor-pointer w-[fit-content] bg-[#36D9C4] absolute  -top-[3rem] left-[8rem] -translate-x-1/2 px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#36D9C4] after:absolute after:rotate-45 after:top-7  '
+                >
                   <a
                     href="https://job-portal-lhzj.onrender.com"
                     target="_blank"
@@ -172,7 +204,7 @@ const ContentPage = ({ setScroll }) => {
                   >
                     Sustainify <GoLinkExternal size={14} strokeWidth={1} />
                   </a>
-                </span>
+                </motion.span>
                 <img
                   className="w-[400px] z-20 relative hover:scale-110 duration-300"
                   src={h}
@@ -188,11 +220,36 @@ const ContentPage = ({ setScroll }) => {
               <motion.div
                 className="w-[fit-content] cursor-pointer relative pl-5 group"
                 initial={{ opacity: 0, x: -70 }}
+                onHoverStart={() =>
+                  setTooltipAnimation((prev) => {
+                    const updated = [...prev];
+                    updated[2] = true;
+                    return updated;
+                  })
+                }
+                onHoverEnd={() =>
+                  setTooltipAnimation((prev) => {
+                    const updated = [...prev];
+                    updated[2] = false;
+                    return updated;
+                  })
+                }
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.9, ease: "easeInOut" }}
               >
-                <span className='cursor-pointer w-[fit-content] group-hover:-top-11 ease-custom transition-transform duration-500 bg-[#399918] absolute top-14 left-1/2 -translate-x-1/2 px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#399918] after:absolute after:rotate-45 after:top-7  '>
+                <motion.span
+                  initial={{ y: 300, opacity: 0 }}
+                  animate={{
+                    y: tooltipAnimation[2] ? 0 : 300,
+                    opacity: tooltipAnimation[2] ? 1 : 0,
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    ease: [0.68, -0.55, 0.265, 1.55],
+                  }}
+                  className='cursor-pointer w-[fit-content] bg-[#399918] absolute -top-[3rem] left-[9.5rem] px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#399918] after:absolute after:rotate-45 after:top-7  '
+                >
                   <a
                     href="https://chat-app-1-tutj.onrender.com"
                     target="_blank"
@@ -200,7 +257,7 @@ const ContentPage = ({ setScroll }) => {
                   >
                     Chat App <GoLinkExternal size={14} strokeWidth={1} />
                   </a>
-                </span>
+                </motion.span>
                 <img
                   className="w-[400px] z-20 relative hover:scale-110 duration-300"
                   src={h}
@@ -327,11 +384,36 @@ const ContentPage = ({ setScroll }) => {
               <motion.div
                 className="w-[fit-content] ml-auto cursor-pointer group relative pr-5"
                 initial={{ opacity: 0, x: 70 }}
+                onHoverStart={() =>
+                  setTooltipAnimation((prev) => {
+                    const updated = [...prev];
+                    updated[3] = true;
+                    return updated;
+                  })
+                }
+                onHoverEnd={() =>
+                  setTooltipAnimation((prev) => {
+                    const updated = [...prev];
+                    updated[3] = false;
+                    return updated;
+                  })
+                }
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.7 }}
                 transition={{ duration: 0.9, ease: "easeInOut" }}
               >
-                <span className='cursor-pointer w-[fit-content] group-hover:-top-11 ease-custom transition-transform duration-500 bg-[#9F6A00] absolute top-14 left-1/2 -translate-x-1/2 px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#9F6A00] after:absolute after:rotate-45 after:top-7  '>
+                <motion.span
+                  initial={{ y: 300, opacity: 0 }}
+                  animate={{
+                    y: tooltipAnimation[3] ? 0 : 300,
+                    opacity: tooltipAnimation[3] ? 1 : 0,
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    ease: [0.68, -0.55, 0.265, 1.55],
+                  }}
+                  className='cursor-pointer w-[fit-content]   bg-[#9F6A00] absolute -top-[3rem] left-[7rem] -translate-x-1/2 px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#9F6A00] after:absolute after:rotate-45 after:top-7  '
+                >
                   <a
                     href="https://job-portal-lhzj.onrender.com"
                     target="_blank"
@@ -339,7 +421,7 @@ const ContentPage = ({ setScroll }) => {
                   >
                     Course Compass <GoLinkExternal size={14} strokeWidth={1} />
                   </a>
-                </span>
+                </motion.span>
                 <img
                   className="w-[400px] relative z-20 hover:scale-110 duration-300"
                   src={h}
@@ -355,11 +437,36 @@ const ContentPage = ({ setScroll }) => {
               <motion.div
                 className="w-[fit-content] cursor-pointer relative pl-5 group"
                 initial={{ opacity: 0, x: -70 }}
+                onHoverStart={() =>
+                  setTooltipAnimation((prev) => {
+                    const updated = [...prev];
+                    updated[4] = true;
+                    return updated;
+                  })
+                }
+                onHoverEnd={() =>
+                  setTooltipAnimation((prev) => {
+                    const updated = [...prev];
+                    updated[4] = false;
+                    return updated;
+                  })
+                }
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.9, ease: "easeInOut" }}
               >
-                <span className='cursor-pointer w-[fit-content] group-hover:-top-11 ease-custom transition-transform duration-500 bg-gray-500 absolute top-14 left-1/2 -translate-x-1/2 px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-gray-500 after:absolute after:rotate-45 after:top-7  '>
+                <motion.span
+                  initial={{ y: 300, opacity: 0 }}
+                  animate={{
+                    y: tooltipAnimation[4] ? 0 : 300,
+                    opacity: tooltipAnimation[4] ? 1 : 0,
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    ease: [0.68, -0.55, 0.265, 1.55],
+                  }}
+                  className='cursor-pointer w-[fit-content]  bg-gray-500 absolute -top-[3rem] left-[10rem] px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-gray-500 after:absolute after:rotate-45 after:top-7  '
+                >
                   <a
                     href="https://chat-app-1-tutj.onrender.com"
                     target="_blank"
@@ -367,7 +474,7 @@ const ContentPage = ({ setScroll }) => {
                   >
                     Klimate <GoLinkExternal size={14} strokeWidth={1} />
                   </a>
-                </span>
+                </motion.span>
                 <img
                   className="w-[400px] z-20 relative hover:scale-110 duration-300"
                   src={h}

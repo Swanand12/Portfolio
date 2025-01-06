@@ -27,6 +27,12 @@ const HeroPage = ({ setScroll }) => {
     false,
     false,
   ]);
+  const [tooltipAnimation, setTooltipAnimation] = useState([
+    false,
+    false,
+    false,
+    false,
+  ]);
 
   // about background click logic
   const handleAboutBAckgroundClick = (e) => {
@@ -78,7 +84,7 @@ const HeroPage = ({ setScroll }) => {
                   x: liElementAnimation[0] ? 0 : "100px",
                   opacity: liElementAnimation[0] ? 1 : 0,
                 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.3 }}
                 className="absolute -bottom-4 font-semibold tracking-wide bg-white whitespace-nowrap   px-3 py-0.5 rounded-full text-sm "
               >
                 View Resume
@@ -109,7 +115,7 @@ const HeroPage = ({ setScroll }) => {
                   x: liElementAnimation[1] ? 0 : "100px",
                   opacity: liElementAnimation[1] ? 1 : 0,
                 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.3 }}
                 className="absolute -bottom-4 font-semibold tracking-wide bg-white whitespace-nowrap   px-3 py-0.5 rounded-full text-sm "
               >
                 Connect with me!
@@ -147,7 +153,7 @@ const HeroPage = ({ setScroll }) => {
                   x: liElementAnimation[2] ? 0 : "100px",
                   opacity: liElementAnimation[2] ? 1 : 0,
                 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.3 }}
                 className="absolute -bottom-4 font-semibold tracking-wide bg-white whitespace-nowrap   px-3 py-0.5 rounded-full text-sm "
               >
                 Send an email!
@@ -178,7 +184,7 @@ const HeroPage = ({ setScroll }) => {
                   x: liElementAnimation[4] ? 0 : "100px",
                   opacity: liElementAnimation[4] ? 1 : 0,
                 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.3 }}
                 className="absolute -bottom-4 font-semibold tracking-wide bg-white whitespace-nowrap  px-3 py-0.5 rounded-full text-sm "
               >
                 Explore my code!
@@ -212,7 +218,7 @@ const HeroPage = ({ setScroll }) => {
                   x: liElementAnimation[3] ? 0 : "100px",
                   opacity: liElementAnimation[3] ? 1 : 0,
                 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.3 }}
                 className="absolute -bottom-4 font-semibold tracking-wide bg-white whitespace-nowrap   px-3 rounded-full py-0.5 text-sm "
               >
                 Chat with me!
@@ -318,60 +324,182 @@ const HeroPage = ({ setScroll }) => {
                 MERN STACK
               </h1>
               <div className="flex gap-14 pt-14 ">
-                <div className="flex flex-col gap-5 items-center relative cursor-pointer group">
-                  <span className='cursor-pointer  w-[7rem] shadow-custom group-hover:-top-14 hidden group-hover:flex ease-custom transition-transform duration-500 bg-[#47A248] absolute top-0 left-1/2 -translate-x-1/2 px-6 py-[7px] rounded-full text-white font-semibold justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#47A248] after:z-[-1] after:absolute after:rotate-45 after:top-[1.7rem]  '>
+                <motion.div
+                  onHoverStart={() =>
+                    setTooltipAnimation((prev) => {
+                      const updated = [...prev];
+                      updated[0] = true;
+                      return updated;
+                    })
+                  }
+                  onHoverEnd={() =>
+                    setTooltipAnimation((prev) => {
+                      const updated = [...prev];
+                      updated[0] = false;
+                      return updated;
+                    })
+                  }
+                  className="flex flex-col gap-5 items-center relative cursor-pointer pointer-events-none"
+                >
+                  <motion.span
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{
+                      y: tooltipAnimation[0] ? 0 : 50,
+                      opacity: tooltipAnimation[0] ? 1 : 0,
+                    }}
+                    transition={{
+                      duration: 0.2,
+                      ease: [0.68, -0.55, 0.265, 1.55],
+                    }}
+                    className='cursor-pointer  w-[7rem]  shadow-custom bg-[#47A248] absolute -top-14 px-6 py-[7px] rounded-md text-[#111111] font-semibold tracking-wide justify-center after:content-[" "] after:w-3 after:h-3 after:bg-[#47A248] after:z-[1] after:absolute after:rotate-45 after:top-[1.7rem] after:left-[3rem] '
+                  >
                     <a
                       href="https://chat-app-1-tutj.onrender.com/"
-                      className="text-sm flex text-white items-center gap-1"
+                      className="text-sm flex items-center gap-1"
                     >
                       MongoDB
                     </a>
-                  </span>
-                  <img src={mongo} alt="mongo" />
-                  <span className="text-2xl text-[#47A248] font-semibold">
+                  </motion.span>
+                  <img
+                    className="pointer-events-auto"
+                    src={mongo}
+                    alt="mongo"
+                  />
+                  <span className="text-2xl pointer-events-auto text-[#47A248] font-semibold">
                     M
                   </span>
-                </div>
-                <div className="flex flex-col gap-5 items-center relative cursor-pointer group">
-                  <span className='cursor-pointer  w-[7rem] shadow-custom group-hover:-top-14 hidden group-hover:flex ease-custom transition-transform duration-500 bg-white absolute top-0 left-1/2 -translate-x-1/2 px-6 py-[7px] rounded-full text-white font-semibold justify-center after:content-[""] after:w-3 after:h-3 after:bg-white after:z-[-1] after:absolute after:rotate-45 after:top-[1.7rem]  '>
+                </motion.div>
+                <motion.div
+                  onHoverStart={() =>
+                    setTooltipAnimation((prev) => {
+                      const updated = [...prev];
+                      updated[1] = true;
+                      return updated;
+                    })
+                  }
+                  onHoverEnd={() =>
+                    setTooltipAnimation((prev) => {
+                      const updated = [...prev];
+                      updated[1] = false;
+                      return updated;
+                    })
+                  }
+                  className="flex flex-col gap-5 items-center relative cursor-pointer pointer-events-none"
+                >
+                  <motion.span
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{
+                      y: tooltipAnimation[1] ? 0 : 50,
+                      opacity: tooltipAnimation[1] ? 1 : 0,
+                    }}
+                    transition={{
+                      duration: 0.2,
+                      ease: [0.68, -0.55, 0.265, 1.55],
+                    }}
+                    className='cursor-pointer  w-[7rem] shadow-custom bg-white absolute -top-14 px-6 py-[7px] rounded-md flex text-white text-[#111111] font-semibold tracking-wide justify-center after:content-[""] after:w-3 after:h-3 after:bg-white after:z-[1] after:absolute after:rotate-45 after:top-[1.7rem]  '
+                  >
                     <a
                       href="https://chat-app-1-tutj.onrender.com/"
-                      className="text-sm flex text-[#191919] items-center gap-1"
+                      className="text-sm flex  items-center gap-1"
                     >
                       Express
                     </a>
+                  </motion.span>
+                  <img
+                    className="pointer-events-auto"
+                    src={express}
+                    alt="express"
+                  />
+                  <span className="text-2xl pointer-events-auto font-semibold text-white">
+                    E
                   </span>
-                  <img src={express} alt="express" />
-                  <span className="text-2xl font-semibold text-white">E</span>
-                </div>
-                <div className="flex flex-col gap-5 items-center relative cursor-pointer group">
-                  <span className='cursor-pointer  w-[7rem] shadow-custom group-hover:-top-14 hidden group-hover:flex ease-custom transition-transform duration-500 bg-[#61DAFB] absolute top-0 left-1/2 -translate-x-1/2 px-6 py-[7px] rounded-full text-white font-semibold justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#61DAFB] after:z-[-1] after:absolute after:rotate-45 after:top-[1.7rem]  '>
+                </motion.div>
+                <motion.div
+                  onHoverStart={() =>
+                    setTooltipAnimation((prev) => {
+                      const updated = [...prev];
+                      updated[2] = true;
+                      return updated;
+                    })
+                  }
+                  onHoverEnd={() =>
+                    setTooltipAnimation((prev) => {
+                      const updated = [...prev];
+                      updated[2] = false;
+                      return updated;
+                    })
+                  }
+                  className="flex flex-col gap-5 items-center relative cursor-pointer pointer-events-none"
+                >
+                  <motion.span
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{
+                      y: tooltipAnimation[2] ? 0 : 50,
+                      opacity: tooltipAnimation[2] ? 1 : 0,
+                    }}
+                    transition={{
+                      duration: 0.2,
+                      ease: [0.68, -0.55, 0.265, 1.55],
+                    }}
+                    className='cursor-pointer  w-[7rem] shadow-custom -top-14 flex bg-[#61DAFB] absolute  px-6 py-[7px] rounded-md text-[#111111] font-semibold tracking-wide justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#61DAFB] after:z-[1] after:absolute after:rotate-45 after:top-[1.7rem]  '
+                  >
                     <a
                       href="https://chat-app-1-tutj.onrender.com/"
-                      className="text-sm flex text-[#191919] items-center gap-1"
+                      className="text-sm flex  items-center gap-1"
                     >
                       React
                     </a>
-                  </span>
-                  <img src={react} alt="react" />
-                  <span className="text-2xl text-[#61DAFB] font-semibold">
+                  </motion.span>
+                  <img
+                    className="pointer-events-auto"
+                    src={react}
+                    alt="react"
+                  />
+                  <span className="text-2xl pointer-events-auto text-[#61DAFB] font-semibold">
                     R
                   </span>
-                </div>
-                <div className="flex flex-col gap-5 items-center relative cursor-pointer group">
-                  <span className='cursor-pointer  w-[7rem] shadow-custom group-hover:-top-14 hidden group-hover:flex ease-custom transition-transform duration-500 bg-[#8CC84B] absolute top-0 left-1/2 -translate-x-1/2 px-6 py-[7px] rounded-full text-white font-semibold justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#8CC84B] after:z-[-1] after:absolute after:rotate-45 after:top-[1.7rem]  '>
+                </motion.div>
+                <motion.div
+                  onHoverStart={() =>
+                    setTooltipAnimation((prev) => {
+                      const updated = [...prev];
+                      updated[3] = true;
+                      return updated;
+                    })
+                  }
+                  onHoverEnd={() =>
+                    setTooltipAnimation((prev) => {
+                      const updated = [...prev];
+                      updated[3] = false;
+                      return updated;
+                    })
+                  }
+                  className="flex flex-col gap-5 items-center relative cursor-pointer pointer-events-none"
+                >
+                  <motion.span
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{
+                      y: tooltipAnimation[3] ? 0 : 50,
+                      opacity: tooltipAnimation[3] ? 1 : 0,
+                    }}
+                    transition={{
+                      duration: 0.2,
+                      ease: [0.68, -0.55, 0.265, 1.55],
+                    }}
+                    className='cursor-pointer  w-[7rem] shadow-custom bg-[#8CC84B] absolute -top-14 flex  px-6 py-[7px] rounded-md text-[#111111] font-semibold tracking-wide justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#8CC84B] after:z-[1] after:absolute after:rotate-45 after:top-[1.7rem]  '
+                  >
                     <a
                       href="https://chat-app-1-tutj.onrender.com/"
-                      className="text-sm flex text-[#191919] items-center gap-1"
+                      className="text-sm flex items-center gap-1"
                     >
                       Node
                     </a>
-                  </span>
-                  <img src={node} alt="node" />
-                  <span className="text-2xl text-[#8CC84B] font-semibold">
+                  </motion.span>
+                  <img className="pointer-events-auto" src={node} alt="node" />
+                  <span className="text-2xl pointer-events-auto text-[#8CC84B] font-semibold">
                     N
                   </span>
-                </div>
+                </motion.div>
               </div>
             </div>
             <div className="w-1/2 relative flex flex-col items-center justify-center ">

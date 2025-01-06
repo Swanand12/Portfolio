@@ -17,6 +17,7 @@ import toast from "react-hot-toast";
 const Contact = ({ setScroll }) => {
   const form = useRef();
   const [loading, setLoading] = useState(false);
+  const [tooltipAnimation, setTooltipAnimation] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -133,25 +134,33 @@ const Contact = ({ setScroll }) => {
             Swanand Sawant &copy; 2024
           </span>
 
-          <div className="group relative px-4">
+          <motion.div
+            onHoverStart={() => setTooltipAnimation(true)}
+            onHoverEnd={() => setTooltipAnimation(false)}
+            className="group relative px-4"
+          >
             <img className="h-[3rem] cursor-pointer" src={logo} alt="logo" />
-            <button
+            <motion.button
+              initial={{ x: -50, opacity: 0 }}
+              animate={{
+                x: tooltipAnimation ? 0 : -50,
+                opacity: tooltipAnimation ? 1 : 0,
+              }}
+              transition={{
+                duration: 0.3,
+                ease: [0.68, -0.55, 0.265, 1.55],
+              }}
               onClick={() => {
                 setScroll(
                   document.querySelector("#root").scrollHeight -
                     window.innerHeight
                 );
-
-                // window.scrollTo({
-                //   top: document.querySelector("#root").scrollHeight,
-                //   behavior: "instant",
-                // });
               }}
-              className="group-hover:flex hidden text-white absolute bg-[#1788AE] px-4 py-2 whitespace-nowrap top-2 text-sm font-semibold tracking wide left-[4rem] rounded-lg before:content-[' '] before:absolute before:top-0 before:w-4 befor:h-4 befroe:z-50 before:bg-black"
+              className=" text-white absolute bg-[#1788AE] px-3 py-1.5 whitespace-nowrap top-[0.5rem] text-sm font-semibold tracking wide left-[4.5rem] rounded-md before:content-[' '] before:rounded-sm before before:bg-[#1788AE] before:absolute before:-top-1.5 before:rotate-45 before:left-12 before:w-4 before:h-4 before:z-10"
             >
               Scroll to top
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
 
           <ul className="flex gap-6 ">
             <li className="">

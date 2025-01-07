@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import h from "../assets/harigurus.webp";
 import Contact from "./Contact";
 import { motion } from "framer-motion";
 import { GoLinkExternal } from "react-icons/go";
 import hirrd from "../assets/hirrd.svg";
+import sustainify from "../assets/sustainify.svg";
+import chat_app from "../assets/chat_app.png";
+import course_compass from "../assets/course_compass.png";
+import klimate from "../assets/klimate.png";
+import AchievementsAndCertifications from "./AchievementsAndCertifications";
 
-const ContentPage = ({ setScroll }) => {
+const ContentPage = ({ contentRef, scrollToHeroPage }) => {
   const [tooltipAnimation, setTooltipAnimation] = useState([
     false,
     false,
@@ -15,7 +19,7 @@ const ContentPage = ({ setScroll }) => {
   ]);
   return (
     <>
-      <div className="h-full relative font-Nunito  bg-white">
+      <div ref={contentRef} className="h-full relative font-Nunito  bg-white">
         <div className="flex w-full relative z-10 bg-white justify-center">
           <h1 className=" text-[2.2rem] font-bold px-5 py-2 border-x-[3px] border-b-[3px] border-[#1595b6] rounded-b-xl text-[#1595b6]">
             My Projects
@@ -23,41 +27,78 @@ const ContentPage = ({ setScroll }) => {
         </div>
 
         {/* Projects */}
-        <div className="projects relative px-5 w-full bg-white">
+        <div className="projects relative px-5 py-8 w-full bg-white">
           {/* Project 1 */}
-          <div className="w-full flex py-5">
-            <div className="relative  w-1/2 flex items-center">
+          <div className="w-full flex lg:flex-row flex-col py-8">
+            <div className="relative  lg:w-1/2 w-full flex items-center">
               <motion.div
-                className="w-[fit-content] cursor-pointer relative pl-5 group"
+                className="lg:w-[fit-content] w-full flex flex-col items-center cursor-pointer relative lg:pl-5 group"
                 initial={{ opacity: 0, x: -70 }}
+                onHoverStart={() =>
+                  setTooltipAnimation((prev) => {
+                    const updated = [...prev];
+                    updated[0] = true;
+                    return updated;
+                  })
+                }
+                onHoverEnd={() =>
+                  setTooltipAnimation((prev) => {
+                    const updated = [...prev];
+                    updated[0] = false;
+                    return updated;
+                  })
+                }
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.9, ease: "easeInOut" }}
               >
-                <span className='cursor-pointer w-[fit-content] group-hover:-top-11 hover:ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] hover:transition-transform hover:duration-500 bg-[#B91C1C] absolute top-14 left-1/2 -translate-x-1/2 px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#B91C1C] after:absolute after:rotate-45 after:top-7  '>
-                  <a
-                    href="https://job-portal-lhzj.onrender.com"
-                    target="_blank"
-                    className="flex items-center gap-1"
+                {window.innerWidth >= 1024 ? (
+                  <motion.span
+                    initial={{ y: 300, opacity: 0 }}
+                    animate={{
+                      y: tooltipAnimation[0] ? 0 : 300,
+                      opacity: tooltipAnimation[0] ? 1 : 0,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease: [0.68, -0.55, 0.265, 1.55],
+                    }}
+                    className='cursor-pointer w-[fit-content] shadow-xl bg-[#B91C1C] absolute -top-16 xl:left-[12rem] left-[11rem]  -translate-x-1/2 px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#B91C1C] after:absolute after:rotate-45 after:top-7  '
                   >
-                    Hirrd <GoLinkExternal size={14} strokeWidth={1} />
-                  </a>
-                </span>
+                    <a
+                      href="https://job-portal-lhzj.onrender.com"
+                      target="_blank"
+                      className="flex items-center gap-1"
+                    >
+                      Hirrd <GoLinkExternal size={14} strokeWidth={1} />
+                    </a>
+                  </motion.span>
+                ) : (
+                  <span className='cursor-pointer w-[fit-content] shadow-xl bg-[#B91C1C] px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#B91C1C] after:absolute after:rotate-45 after:top-7  '>
+                    <a
+                      href="https://job-portal-lhzj.onrender.com"
+                      target="_blank"
+                      className="flex items-center gap-1"
+                    >
+                      Hirrd <GoLinkExternal size={14} strokeWidth={1} />
+                    </a>
+                  </span>
+                )}
                 <img
-                  className="w-[400px] relative hover:scale-110 duration-300 z-20"
+                  className="xl:w-[450px] w-[400px] relative hover:scale-110 duration-300 z-20"
                   src={hirrd}
                   alt="demo"
                 />
               </motion.div>
               <motion.div
                 initial={{ width: 0 }}
-                whileInView={{ width: 600 }}
+                whileInView={{ width: "50%" }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ delay: 0.9, duration: 0.9, ease: "easeInOut" }}
-                className="absolute right-0 z-0 h-[2px] bg-[#B91C1C]"
+                className="absolute lg:block hidden right-0 z-0 h-[2px] bg-[#B91C1C]"
               ></motion.div>
               <a
-                className="absolute -right-2 border-[3px] border-[#B91C1C] rounded-full h-4 w-4 bg-white z-50"
+                className="absolute hover:scale-125 lg:block hidden transition-transform duration-150 -right-2 border-[3px] border-[#B91C1C] rounded-full h-4 w-4 bg-white z-50"
                 href="https://job-portal-lhzj.onrender.com"
                 target="_blank"
               ></a>
@@ -66,21 +107,21 @@ const ContentPage = ({ setScroll }) => {
             <motion.div
               initial={{ opacity: 0, x: 70 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.9, ease: "easeInOut" }}
-              className="w-1/2 ml-auto p-10 flex flex-col gap-2.5"
+              className="lg:w-1/2 w-full ml-auto p-10 flex flex-col items-center gap-2.5"
             >
               <h1 className="text-[#B91C1C] text-3xl font-bold">Hirrd</h1>
               <span className="text-[#B91C1C] text-xl font-semibold">
                 (Job Portal)
               </span>
-              <p className="font-semibold">
+              <p className="font-semibold lg:text-start text-center">
                 Hirrd is a full-stack job portal that connects recruiters with
                 candidates, allowing recruiters to hire and candidates to apply
                 for jobs. It streamlines the recruitment process, making it
                 easier for both parties to find the right opportunities.
               </p>
-              <div className="skills flex flex-wrap gap-3 pt-2 pb-5">
+              <div className="skills flex flex-wrap lg:justify-start justify-center gap-3 pt-2 pb-5">
                 <p className="text-sm border border-gray-300 font-semibold py-1 px-3 rounded-full">
                   #react.js
                 </p>
@@ -107,26 +148,26 @@ const ContentPage = ({ setScroll }) => {
           </div>
 
           {/* Project 2 */}
-          <div className="w-full flex py-5">
+          <div className="w-full flex lg:flex-row flex-col-reverse py-8">
             <motion.div
               initial={{ opacity: 0, x: -70 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.7 }}
               transition={{ duration: 0.9, ease: "easeInOut" }}
-              className="w-1/2 ml-auto p-10 flex flex-col gap-2.5"
+              className="lg:w-1/2 w-full ml-auto p-10 flex flex-col lg:items-start items-center gap-2.5"
             >
               <h1 className="text-[#36D9C4] text-3xl font-bold">Sustainify</h1>
               <span className="text-[#36D9C4] text-xl font-semibold">
                 (Energy Trading Portal)
               </span>
-              <p className="font-semibold">
+              <p className="font-semibold lg:text-start text-center">
                 Sustainify is a sustainable energy network that enables
                 peer-to-peer solar energy trading using blockchain technology.
                 It includes features like energy bidding and automatic energy
                 transfer for surplus production. The project focuses on
                 optimizing energy distribution through a decentralized
               </p>
-              <div className="skills flex flex-wrap gap-3 pt-2 pb-5">
+              <div className="skills flex flex-wrap lg:justify-start justify-center  gap-3 pt-2 pb-5">
                 <p className="text-sm border border-gray-300 font-semibold py-1 px-3 rounded-full">
                   #react.js
                 </p>
@@ -151,21 +192,21 @@ const ContentPage = ({ setScroll }) => {
               </div>
             </motion.div>
 
-            <div className="relative w-1/2 flex items-center">
+            <div className="relative lg:w-1/2 w-full flex items-center">
               <a
-                className="absolute -left-2 border-[3px] border-[#36D9C4] rounded-full h-4 w-4 bg-white z-50"
+                className="absolute hover:scale-125 lg:block hidden transition-transform duration-150  -left-2 border-[3px] border-[#36D9C4] rounded-full h-4 w-4 bg-white z-50"
                 href="https://job-portal-lhzj.onrender.com"
                 target="_blank"
               ></a>
               <motion.div
                 initial={{ width: 0 }}
-                whileInView={{ width: 600 }}
+                whileInView={{ width: "50%" }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ delay: 0.9, duration: 0.9, ease: "easeInOut" }}
-                className="absolute left-0 z-0 h-[2px] bg-[#36D9C4]"
+                className="absolute lg:block hidden left-0 z-0 h-[2px] bg-[#36D9C4]"
               ></motion.div>
               <motion.div
-                className="w-[fit-content] ml-auto cursor-pointer group relative pr-5"
+                className="lg:w-[fit-content] w-full flex flex-col items-center ml-auto cursor-pointer group relative lg:pr-5"
                 initial={{ opacity: 0, x: 70 }}
                 onHoverStart={() =>
                   setTooltipAnimation((prev) => {
@@ -185,29 +226,41 @@ const ContentPage = ({ setScroll }) => {
                 viewport={{ once: true, amount: 0.7 }}
                 transition={{ duration: 0.9, ease: "easeInOut" }}
               >
-                <motion.span
-                  initial={{ y: 300, opacity: 0 }}
-                  animate={{
-                    y: tooltipAnimation[1] ? 0 : 300,
-                    opacity: tooltipAnimation[1] ? 1 : 0,
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    ease: [0.68, -0.55, 0.265, 1.55],
-                  }}
-                  className='cursor-pointer w-[fit-content] bg-[#36D9C4] absolute  -top-[3rem] left-[8rem] -translate-x-1/2 px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#36D9C4] after:absolute after:rotate-45 after:top-7  '
-                >
-                  <a
-                    href="https://job-portal-lhzj.onrender.com"
-                    target="_blank"
-                    className="flex items-center gap-1"
+                {window.innerWidth >= 1024 ? (
+                  <motion.span
+                    initial={{ y: 300, opacity: 0 }}
+                    animate={{
+                      y: tooltipAnimation[1] ? 0 : 300,
+                      opacity: tooltipAnimation[1] ? 1 : 0,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease: [0.68, -0.55, 0.265, 1.55],
+                    }}
+                    className='cursor-pointer w-[fit-content] shadow-xl bg-[#36D9C4] absolute  -top-[4rem] xl:left-[10rem] left-[8rem] -translate-x-1/2 px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#36D9C4] after:absolute after:rotate-45 after:top-7  '
                   >
-                    Sustainify <GoLinkExternal size={14} strokeWidth={1} />
-                  </a>
-                </motion.span>
+                    <a
+                      href="https://job-portal-lhzj.onrender.com"
+                      target="_blank"
+                      className="flex items-center gap-1"
+                    >
+                      Sustainify <GoLinkExternal size={14} strokeWidth={1} />
+                    </a>
+                  </motion.span>
+                ) : (
+                  <span className='cursor-pointer w-[fit-content] shadow-xl bg-[#36D9C4]  px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#36D9C4] after:absolute after:rotate-45 after:top-7  '>
+                    <a
+                      href="https://job-portal-lhzj.onrender.com"
+                      target="_blank"
+                      className="flex items-center gap-1"
+                    >
+                      Sustainify <GoLinkExternal size={14} strokeWidth={1} />
+                    </a>
+                  </span>
+                )}
                 <img
-                  className="w-[400px] z-20 relative hover:scale-110 duration-300"
-                  src={h}
+                  className="xl:w-[450px] w-[400px] z-20 relative hover:scale-110 duration-300"
+                  src={sustainify}
                   alt="demo"
                 />
               </motion.div>
@@ -215,10 +268,10 @@ const ContentPage = ({ setScroll }) => {
           </div>
 
           {/* Project 3 */}
-          <div className="w-full flex py-5 ">
-            <div className="relative w-1/2 flex items-center">
+          <div className="w-full flex lg:flex-row flex-col  py-8 ">
+            <div className="relative lg:w-1/2 w-full flex items-center">
               <motion.div
-                className="w-[fit-content] cursor-pointer relative pl-5 group"
+                className="lg:w-[fit-content] w-full flex flex-col items-center cursor-pointer relative lg:pl-5 group"
                 initial={{ opacity: 0, x: -70 }}
                 onHoverStart={() =>
                   setTooltipAnimation((prev) => {
@@ -235,44 +288,56 @@ const ContentPage = ({ setScroll }) => {
                   })
                 }
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.9, ease: "easeInOut" }}
               >
-                <motion.span
-                  initial={{ y: 300, opacity: 0 }}
-                  animate={{
-                    y: tooltipAnimation[2] ? 0 : 300,
-                    opacity: tooltipAnimation[2] ? 1 : 0,
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    ease: [0.68, -0.55, 0.265, 1.55],
-                  }}
-                  className='cursor-pointer w-[fit-content] bg-[#399918] absolute -top-[3rem] left-[9.5rem] px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#399918] after:absolute after:rotate-45 after:top-7  '
-                >
-                  <a
-                    href="https://chat-app-1-tutj.onrender.com"
-                    target="_blank"
-                    className="flex items-center gap-1"
+                {window.innerWidth >= 1024 ? (
+                  <motion.span
+                    initial={{ y: 300, opacity: 0 }}
+                    animate={{
+                      y: tooltipAnimation[2] ? 0 : 300,
+                      opacity: tooltipAnimation[2] ? 1 : 0,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease: [0.68, -0.55, 0.265, 1.55],
+                    }}
+                    className='cursor-pointer w-[fit-content] shadow-xl bg-[#399918] absolute -top-[4rem] xl:left-[11rem] left-[9.5rem] px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#399918] after:absolute after:rotate-45 after:top-7  '
                   >
-                    Chat App <GoLinkExternal size={14} strokeWidth={1} />
-                  </a>
-                </motion.span>
+                    <a
+                      href="https://chat-app-1-tutj.onrender.com"
+                      target="_blank"
+                      className="flex items-center gap-1"
+                    >
+                      Chat App <GoLinkExternal size={14} strokeWidth={1} />
+                    </a>
+                  </motion.span>
+                ) : (
+                  <span className='cursor-pointer w-[fit-content] shadow-xl bg-[#399918] px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#399918] after:absolute after:rotate-45 after:top-7  '>
+                    <a
+                      href="https://chat-app-1-tutj.onrender.com"
+                      target="_blank"
+                      className="flex items-center gap-1"
+                    >
+                      Chat App <GoLinkExternal size={14} strokeWidth={1} />
+                    </a>
+                  </span>
+                )}
                 <img
-                  className="w-[400px] z-20 relative hover:scale-110 duration-300"
-                  src={h}
+                  className="xl:w-[450px] w-[400px] z-20 relative hover:scale-110 duration-300"
+                  src={chat_app}
                   alt="demo"
                 />
               </motion.div>
               <motion.div
                 initial={{ width: 0 }}
-                whileInView={{ width: 600 }}
+                whileInView={{ width: "50%" }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ delay: 0.9, duration: 0.9, ease: "easeInOut" }}
-                className="absolute right-0 z-0 h-[2px] bg-[#399918]"
+                className="absolute lg:block hidden right-0 z-0 h-[2px] bg-[#399918]"
               ></motion.div>
               <a
-                className="absolute -right-2 border-[3px] border-[#399918] rounded-full h-4 w-4 bg-white z-50"
+                className="absolute hover:scale-125 lg:block hidden transition-transform duration-150  -right-2 border-[3px] border-[#399918] rounded-full h-4 w-4 bg-white z-50"
                 href="https://chat-app-1-tutj.onrender.com/"
                 target="_blank"
               ></a>
@@ -281,21 +346,21 @@ const ContentPage = ({ setScroll }) => {
             <motion.div
               initial={{ opacity: 0, x: 70 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.9, ease: "easeInOut" }}
-              className="w-1/2 ml-auto p-10 flex flex-col gap-2.5"
+              className="lg:w-1/2 w-full ml-auto p-10 flex flex-col lg:items-start items-center gap-2.5"
             >
               <h1 className="text-[#399918] text-3xl font-bold">Chat App</h1>
               <span className="text-[#399918] text-xl font-semibold">
                 (Real Time Chatting Application)
               </span>
-              <p className="font-semibold">
+              <p className="font-semibold lg:text-start text-center">
                 Chat-App is a full-stack chatting platform that provides
                 real-time communication using Socket.io. It offers features like
                 one-to-one messaging, group chats, and comprehensive CRUD
                 operations for managing conversations and user data.
               </p>
-              <div className="skills flex flex-wrap gap-3 pt-2 pb-5">
+              <div className="skills flex flex-wrap lg:justify-start justify-center  gap-3 pt-2 pb-5">
                 <p className="text-sm border border-gray-300 font-semibold py-1 px-3 rounded-full">
                   #react.js
                 </p>
@@ -322,13 +387,13 @@ const ContentPage = ({ setScroll }) => {
           </div>
 
           {/* Project 4 */}
-          <div className="w-full flex py-5">
+          <div className="w-full flex lg:flex-row flex-col-reverse py-8">
             <motion.div
               initial={{ opacity: 0, x: -70 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.7 }}
               transition={{ duration: 0.9, ease: "easeInOut" }}
-              className="w-1/2 ml-auto p-10 flex flex-col gap-2.5"
+              className="lg:w-1/2 w-full ml-auto p-10 flex flex-col lg:items-start items-center gap-2.5"
             >
               <h1 className="text-[#9F6A00] text-3xl font-bold">
                 Course Compass
@@ -336,14 +401,14 @@ const ContentPage = ({ setScroll }) => {
               <span className="text-[#9F6A00] text-xl font-semibold">
                 (Online Learning Platform)
               </span>
-              <p className="font-semibold">
+              <p className="font-semibold lg:text-start text-center">
                 I worked as a frontend developer on a Course Compass during my
                 internship, designed to offer experiential courses to students.
                 The platform integrates interactive quizzes, live lectures,
                 practical projects, and an AI tutor to enhance learning by
                 providing personalized support and real-time engagement.
               </p>
-              <div className="skills flex flex-wrap gap-3 pt-2 pb-5">
+              <div className="skills flex flex-wrap lg:justify-start justify-center gap-3 pt-2 pb-5">
                 <p className="text-sm border border-gray-300 font-semibold py-1 px-3 rounded-full">
                   #react.js
                 </p>
@@ -368,21 +433,21 @@ const ContentPage = ({ setScroll }) => {
               </div>
             </motion.div>
 
-            <div className="relative w-1/2 flex items-center">
+            <div className="relative lg:w-1/2 w-full flex items-center">
               <a
-                className="absolute -left-2 border-[3px] border-[#9F6A00] rounded-full h-4 w-4 bg-white z-50"
+                className="absolute hover:scale-125 lg:block hidden transition-transform duration-150  -left-2 border-[3px] border-[#9F6A00] rounded-full h-4 w-4 bg-white z-50"
                 href="https://chat-app-1-tutj.onrender.com"
                 target="_blank"
               ></a>
               <motion.div
                 initial={{ width: 0 }}
-                whileInView={{ width: 600 }}
+                whileInView={{ width: "50%" }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ delay: 0.9, duration: 0.9, ease: "easeInOut" }}
-                className="absolute left-0 z-0 h-[2px] bg-[#9F6A00]"
+                className="absolute left-0 z-0 lg:block hidden h-[2px] bg-[#9F6A00]"
               ></motion.div>
               <motion.div
-                className="w-[fit-content] ml-auto cursor-pointer group relative pr-5"
+                className="lg:w-[fit-content] w-full ml-auto flex flex-col items-center  justify-center cursor-pointer group relative lg:pr-5"
                 initial={{ opacity: 0, x: 70 }}
                 onHoverStart={() =>
                   setTooltipAnimation((prev) => {
@@ -402,29 +467,43 @@ const ContentPage = ({ setScroll }) => {
                 viewport={{ once: true, amount: 0.7 }}
                 transition={{ duration: 0.9, ease: "easeInOut" }}
               >
-                <motion.span
-                  initial={{ y: 300, opacity: 0 }}
-                  animate={{
-                    y: tooltipAnimation[3] ? 0 : 300,
-                    opacity: tooltipAnimation[3] ? 1 : 0,
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    ease: [0.68, -0.55, 0.265, 1.55],
-                  }}
-                  className='cursor-pointer w-[fit-content]   bg-[#9F6A00] absolute -top-[3rem] left-[7rem] -translate-x-1/2 px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#9F6A00] after:absolute after:rotate-45 after:top-7  '
-                >
-                  <a
-                    href="https://job-portal-lhzj.onrender.com"
-                    target="_blank"
-                    className="flex items-center gap-1"
+                {window.innerWidth >= 1024 ? (
+                  <motion.span
+                    initial={{ y: 300, opacity: 0 }}
+                    animate={{
+                      y: tooltipAnimation[3] ? 0 : 300,
+                      opacity: tooltipAnimation[3] ? 1 : 0,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease: [0.68, -0.55, 0.265, 1.55],
+                    }}
+                    className='cursor-pointer w-[fit-content] shadow-xl   bg-[#9F6A00] absolute -top-[4rem] xl:left-[8.5rem] left-[7rem] -translate-x-1/2 px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#9F6A00] after:absolute after:rotate-45 after:top-7  '
                   >
-                    Course Compass <GoLinkExternal size={14} strokeWidth={1} />
-                  </a>
-                </motion.span>
+                    <a
+                      href="https://job-portal-lhzj.onrender.com"
+                      target="_blank"
+                      className="flex items-center gap-1"
+                    >
+                      Course Compass{" "}
+                      <GoLinkExternal size={14} strokeWidth={1} />
+                    </a>
+                  </motion.span>
+                ) : (
+                  <span className='cursor-pointer w-[fit-content] shadow-xl   bg-[#9F6A00] px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#9F6A00] after:absolute after:rotate-45 after:top-7  '>
+                    <a
+                      href="https://job-portal-lhzj.onrender.com"
+                      target="_blank"
+                      className="flex items-center gap-1"
+                    >
+                      Course Compass{" "}
+                      <GoLinkExternal size={14} strokeWidth={1} />
+                    </a>
+                  </span>
+                )}
                 <img
-                  className="w-[400px] relative z-20 hover:scale-110 duration-300"
-                  src={h}
+                  className="xl:w-[450px] w-[400px] relative z-20 hover:scale-110 duration-300"
+                  src={course_compass}
                   alt="demo"
                 />
               </motion.div>
@@ -432,10 +511,10 @@ const ContentPage = ({ setScroll }) => {
           </div>
 
           {/* Project 5 */}
-          <div className="w-full flex py-5 ">
-            <div className="relative w-1/2 flex items-center">
+          <div className="w-full flex lg:flex-row flex-col pt-8 pb-14 ">
+            <div className="relative lg:w-1/2 w-full flex items-center lg:justify-start justify-center">
               <motion.div
-                className="w-[fit-content] cursor-pointer relative pl-5 group"
+                className="w-[fit-content] cursor-pointer relative lg:pl-5 flex flex-col items-center group"
                 initial={{ opacity: 0, x: -70 }}
                 onHoverStart={() =>
                   setTooltipAnimation((prev) => {
@@ -452,45 +531,57 @@ const ContentPage = ({ setScroll }) => {
                   })
                 }
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.9, ease: "easeInOut" }}
               >
-                <motion.span
-                  initial={{ y: 300, opacity: 0 }}
-                  animate={{
-                    y: tooltipAnimation[4] ? 0 : 300,
-                    opacity: tooltipAnimation[4] ? 1 : 0,
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    ease: [0.68, -0.55, 0.265, 1.55],
-                  }}
-                  className='cursor-pointer w-[fit-content]  bg-gray-500 absolute -top-[3rem] left-[10rem] px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-gray-500 after:absolute after:rotate-45 after:top-7  '
-                >
-                  <a
-                    href="https://chat-app-1-tutj.onrender.com"
-                    target="_blank"
-                    className="flex items-center gap-1"
+                {window.innerWidth >= 1024 ? (
+                  <motion.span
+                    initial={{ y: 300, opacity: 0 }}
+                    animate={{
+                      y: tooltipAnimation[4] ? 0 : 300,
+                      opacity: tooltipAnimation[4] ? 1 : 0,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease: [0.68, -0.55, 0.265, 1.55],
+                    }}
+                    className='cursor-pointer w-[fit-content] shadow-xl  bg-gray-500 absolute -top-[4rem] xl:left-[11.5rem] left-[10rem] px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-gray-500 after:absolute after:rotate-45 after:top-7  '
                   >
-                    Klimate <GoLinkExternal size={14} strokeWidth={1} />
-                  </a>
-                </motion.span>
+                    <a
+                      href="https://klimate-flax.vercel.app"
+                      target="_blank"
+                      className="flex items-center gap-1"
+                    >
+                      Klimate <GoLinkExternal size={14} strokeWidth={1} />
+                    </a>
+                  </motion.span>
+                ) : (
+                  <span className='cursor-pointer w-[fit-content] shadow-xl  bg-gray-500 px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-gray-500 after:absolute after:rotate-45 after:top-7  '>
+                    <a
+                      href="https://klimate-flax.vercel.app"
+                      target="_blank"
+                      className="flex items-center gap-1"
+                    >
+                      Klimate <GoLinkExternal size={14} strokeWidth={1} />
+                    </a>
+                  </span>
+                )}
                 <img
-                  className="w-[400px] z-20 relative hover:scale-110 duration-300"
-                  src={h}
+                  className="xl:w-[450px] w-[400px] z-20 relative hover:scale-110 duration-300"
+                  src={klimate}
                   alt="demo"
                 />
               </motion.div>
               <motion.div
                 initial={{ width: 0 }}
-                whileInView={{ width: 600 }}
+                whileInView={{ width: "50%" }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ delay: 0.9, duration: 0.9, ease: "easeInOut" }}
-                className="absolute right-0 z-0 h-[2px] bg-gray-500"
+                className="absolute hidden lg:block right-0 z-0 h-[2px] bg-gray-500"
               ></motion.div>
               <a
-                className="absolute -right-2 border-[3px] border-gray-500 rounded-full h-4 w-4 bg-white z-50"
-                href="https://chat-app-1-tutj.onrender.com/"
+                className="absolute hidden lg:block hover:scale-125 transition-transform duration-150  -right-2 border-[3px] border-gray-500 rounded-full h-4 w-4 bg-white z-50"
+                href="https://klimate-flax.vercel.app"
                 target="_blank"
               ></a>
             </div>
@@ -498,22 +589,22 @@ const ContentPage = ({ setScroll }) => {
             <motion.div
               initial={{ opacity: 0, x: 70 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.9, ease: "easeInOut" }}
-              className="w-1/2 ml-auto p-10 flex flex-col gap-2.5"
+              className="lg:w-1/2 w-full ml-auto p-10  flex flex-col lg:items-start items-center gap-2.5"
             >
               <h1 className="text-gray-500 text-3xl font-bold">Klimate</h1>
               <span className="text-gray-500 text-xl font-semibold">
                 (Weather App)
               </span>
-              <p className="font-semibold">
+              <p className="font-semibold lg:text-start text-center">
                 Klimate is a weather application that provides real-time weather
                 updates for your location and any city you search. It features
                 city search, favorite city management, and a 6-day weather
                 forecast. The app includes interactive graphs for detailed
                 hourly forecasts.
               </p>
-              <div className="skills flex flex-wrap gap-3 pt-2 pb-5">
+              <div className="skills flex flex-wrap lg:justify-start justify-center gap-3 pt-2 pb-5">
                 <p className="text-sm border border-gray-300 font-semibold py-1 px-3 rounded-full">
                   #react.js
                 </p>
@@ -536,13 +627,14 @@ const ContentPage = ({ setScroll }) => {
           <motion.div
             initial={{ height: "0" }}
             whileInView={{ height: "100%" }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 2.2, ease: "easeInOut" }}
-            className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] bg-[#1595b6]"
+            className="absolute hidden lg:block top-0 left-1/2 -translate-x-1/2 w-[2px] bg-[#1595b6]"
           ></motion.div>
         </div>
 
-        <Contact setScroll={setScroll} />
+        <AchievementsAndCertifications />
+        <Contact scrollToHeroPage={scrollToHeroPage} />
       </div>
     </>
   );

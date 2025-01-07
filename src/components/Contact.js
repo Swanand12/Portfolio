@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 
-const Contact = ({ setScroll }) => {
+const Contact = ({ scrollToHeroPage }) => {
   const form = useRef();
   const [loading, setLoading] = useState(false);
   const [tooltipAnimation, setTooltipAnimation] = useState(false);
@@ -50,19 +50,19 @@ const Contact = ({ setScroll }) => {
   };
   return (
     <>
-      <div className="h-[100vh] font-Nunito px-10 bg-white">
+      <div className="h-auto min-h-[100vh]  font-Nunito px-10 bg-white">
         <div className="flex bg-white justify-center ">
           <h1 className="text-[2.2rem] font-bold px-5 py-2 border-[3px] border-[#1595b6] rounded-xl text-[#1595b6]">
             Lets connect
           </h1>
         </div>
-        <div className="flex">
+        <div className="flex lg:flex-row flex-col">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.7 }}
             transition={{ duration: 0.7, ease: "easeInOut" }}
-            className="w-1/2"
+            className="lg:w-1/2 w-full"
           >
             <img src={contact_img} alt="contact-img" />
           </motion.div>
@@ -71,7 +71,7 @@ const Contact = ({ setScroll }) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.7 }}
             transition={{ duration: 0.7, ease: "easeInOut" }}
-            className="w-1/2 px-5 py-5 space-y-2"
+            className="lg:w-1/2 w-full px-5 py-5 space-y-2"
           >
             <form onSubmit={sendEmail} ref={form}>
               <div className="flex flex-col gap-1">
@@ -131,7 +131,7 @@ const Contact = ({ setScroll }) => {
         {/* Footer */}
         <div className="flex flex-col items-center justify-center gap-8 pt-10">
           <span className="text-sm text-gray-400">
-            Swanand Sawant &copy; 2024
+            Made by Swanand Sawant &copy; 2025
           </span>
 
           <motion.div
@@ -150,12 +150,7 @@ const Contact = ({ setScroll }) => {
                 duration: 0.3,
                 ease: [0.68, -0.55, 0.265, 1.55],
               }}
-              onClick={() => {
-                setScroll(
-                  document.querySelector("#root").scrollHeight -
-                    window.innerHeight
-                );
-              }}
+              onClick={scrollToHeroPage}
               className=" text-white absolute bg-[#1788AE] px-3 py-1.5 whitespace-nowrap top-[0.5rem] text-sm font-semibold tracking wide left-[4.5rem] rounded-md before:content-[' '] before:rounded-sm before before:bg-[#1788AE] before:absolute before:-top-1.5 before:rotate-45 before:left-12 before:w-4 before:h-4 before:z-10"
             >
               Scroll to top
@@ -174,12 +169,15 @@ const Contact = ({ setScroll }) => {
               </a>
             </li>
             <li className="">
-              <a href="www.instagram.com">
+              <a href="https://github.com/Swanand12" target="_blank">
                 <FaGithub className="text-[#1788AE] duration-200 hover:scale-125 cursor-pointer size-5" />
               </a>
             </li>
             <li className="">
-              <a href="www.instagram.com">
+              <a
+                href="https://wa.me/9324441334?text=Message%20through%20swanand%20portfolio"
+                target="_blank"
+              >
                 <RiWhatsappFill className="text-[#1788AE] duration-200 hover:scale-125 cursor-pointer size-5" />
               </a>
             </li>

@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 import { RxCross1 } from "react-icons/rx";
 import MatterCanvas from "../particles/matter";
 
-const HeroPage = ({ setScroll }) => {
+const HeroPage = ({ heroPageRef, scrollToContent }) => {
   const [showAboutModal, setShowAboutModal] = useState(false);
   const ref = useRef(null);
   const [liElementAnimation, setLiAnimation] = useState([
@@ -41,16 +41,15 @@ const HeroPage = ({ setScroll }) => {
     }
   };
 
-  const handleScroll = () => {
-    setScroll(-document.querySelector("body").clientHeight);
-  };
-
   return (
     <>
       <div className="z-[0] text-white w-full h-100vh absolute  ">
         <MatterCanvas />
       </div>
-      <motion.div className="hero h-[100vh] bg-[#111111]  w-[100%] xs:px-5 sm:px-10 lg:px-20 ">
+      <motion.div
+        ref={heroPageRef}
+        className="hero h-[100vh] bg-[#111111]  w-[100%] xs:px-5 sm:px-10 lg:px-20 "
+      >
         <div className="header px-4 py-4 w-full flex items-center justify-between">
           <img
             className="w-[50px] pointer-events-none relative "
@@ -75,7 +74,7 @@ const HeroPage = ({ setScroll }) => {
                 })
               }
             >
-              <a href="/resume">
+              <a href="/resume" target="_blank">
                 <FaFileAlt className="text-gray-400 hover:text-white duration-200 hover:scale-110 cursor-pointer size-6 md:size-8" />
               </a>
               <motion.span
@@ -106,7 +105,10 @@ const HeroPage = ({ setScroll }) => {
                 })
               }
             >
-              <a href="www.google.com">
+              <a
+                href="https://www.linkedin.com/in/swanandsawant"
+                target="_blank"
+              >
                 <FaLinkedinIn className="text-gray-400 hover:text-white duration-200 hover:scale-110 cursor-pointer size-8 md:size-10" />
               </a>
               <motion.span
@@ -228,11 +230,7 @@ const HeroPage = ({ setScroll }) => {
         </div>
         <div className="flex h-[70%] items-center pointer-events-none justify-center sm:h-[78%] ">
           <div className=" flex flex-col absolute   gap-4">
-            <div
-              // onMouseEnter={textEnter}
-              // onMouseLeave={textLeave}
-              className="flex gap-4  "
-            >
+            <div className="flex gap-4  ">
               <div className="flex">
                 <img
                   className="size-10 sm:size-14 md:size-20"
@@ -272,8 +270,8 @@ const HeroPage = ({ setScroll }) => {
 
         <div className="w-full flex justify-center">
           <button
-            onClick={handleScroll}
-            className="w-[6.5rem] sm:w-[8rem] text-sm relative sm:text-normal shadow-custom cursor-pointer focus:outline-none hover:scale-105 duration-200 group ease-in-out py-1.5 sm:py-2 text-white font-semibold rounded-[4px] bg-gradient-to-l from-primary to-[#1f2667e6]"
+            onClick={scrollToContent}
+            className="w-[6.5rem] sm:w-[8rem] text-sm relative -top-3 sm:text-normal shadow-custom cursor-pointer focus:outline-none hover:scale-105 duration-200 group ease-in-out py-1.5 sm:py-2 text-white font-semibold rounded-[4px] bg-gradient-to-l from-primary to-[#1f2667e6]"
             type="button"
           >
             My Projects
@@ -396,7 +394,7 @@ const HeroPage = ({ setScroll }) => {
                       duration: 0.2,
                       ease: [0.68, -0.55, 0.265, 1.55],
                     }}
-                    className='cursor-pointer  w-[7rem] shadow-custom bg-white absolute -top-14 px-6 py-[7px] rounded-md flex text-white text-[#111111] font-semibold tracking-wide justify-center after:content-[""] after:w-3 after:h-3 after:bg-white after:z-[1] after:absolute after:rotate-45 after:top-[1.7rem]  '
+                    className='cursor-pointer  w-[7rem] shadow-custom bg-white absolute -top-14 px-6 py-[7px] rounded-md flex text-[#111111] font-semibold tracking-wide justify-center after:content-[""] after:w-3 after:h-3 after:bg-white after:z-[1] after:absolute after:rotate-45 after:top-[1.7rem]  '
                   >
                     <a
                       href="https://chat-app-1-tutj.onrender.com/"

@@ -119,7 +119,7 @@ const MatterCanvas = () => {
         let r = Common.random(0, 1);
         var circle = Bodies.circle(x, y, Common.random(2, 8), {
           mass: 10,
-          friction: 0.5,
+          friction: 1,
           frictionAir: 0.03,
           render: {
             fillStyle: r > 0.3 ? `#27292d` : `#444444`,

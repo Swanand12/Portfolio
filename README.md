@@ -47,7 +47,7 @@ To implement Matter.js animations, include the following script tags in your `in
 
 - #### At the End of the `<body>` Tag
 
--- Add these external libraries to load the required dependencies for Matter.js:
+   - Add these external libraries to load the required dependencies for Matter.js:
 
 ```html
 <script
@@ -62,7 +62,7 @@ To implement Matter.js animations, include the following script tags in your `in
 
 - #### At the End of the <head> Tag
 
--- Include your Matter.js script file. Replace the path with the actual file location in your project directory:
+   - Include your Matter.js script file. Replace the path with the actual file location in your project directory:
 
 ```html
 <script src="/src/particles/matter.js" defer></script>

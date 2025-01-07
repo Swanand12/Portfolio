@@ -34,7 +34,7 @@ To run this project locally, follow these steps:
 ```
 
 ### Step 2: Create a matter.js file and add animation code 
-[React](src/particles/matter.js)
+[Animation Code](src/particles/matter.js)
 
 ### Step 3: Add Matter.js file component to App.js
 ```html

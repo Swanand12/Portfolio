@@ -1,58 +1,215 @@
 [
   {
-    "id": 1,
-    "name": "#python"
+    "skills": [
+      {
+        "id": 1,
+        "name": "#python"
+      },
+      {
+        "id": 2,
+        "name": "#react.js"
+      },
+      {
+        "id": 3,
+        "name": "#node.js"
+      },
+      {
+        "id": 4,
+        "name": "#express.js"
+      },
+      {
+        "id": 5,
+        "name": "#mongoDB"
+      },
+      {
+        "id": 6,
+        "name": "#html"
+      },
+      {
+        "id": 7,
+        "name": "#css"
+      },
+      {
+        "id": 8,
+        "name": "#javascript"
+      },
+      {
+        "id": 9,
+        "name": "#tailwind"
+      },
+      {
+        "id": 10,
+        "name": "#SQL"
+      },
+      {
+        "id": 11,
+        "name": "#redux"
+      },
+      {
+        "id": 12,
+        "name": "#solidity"
+      },
+      {
+        "id": 13,
+        "name": "#socket.io"
+      },
+      {
+        "id": 14,
+        "name": "#github"
+      }
+    ]
   },
+
   {
-    "id": 2,
-    "name": "#react.js"
+    "hirrd_technologies": [
+      {
+        "id": 1,
+        "name": "#react.js"
+      },
+      {
+        "id": 2,
+        "name": "#node.js"
+      },
+      {
+        "id": 3,
+        "name": "#express.js"
+      },
+      {
+        "id": 4,
+        "name": "#mongoDB"
+      },
+      {
+        "id": 5,
+        "name": "#tailwind CSS"
+      },
+      {
+        "id": 6,
+        "name": "#shadcnUI"
+      },
+      {
+        "id": 7,
+        "name": "#rest API's"
+      }
+    ]
   },
+
   {
-    "id": 3,
-    "name": "#node.js"
+    "sustainify_technologies": [
+      {
+        "id": 1,
+        "name": "#react.js"
+      },
+      {
+        "id": 2,
+        "name": "#node.js"
+      },
+      {
+        "id": 3,
+        "name": "#express.js"
+      },
+      {
+        "id": 4,
+        "name": "#mongoDB"
+      },
+      {
+        "id": 5,
+        "name": "#tailwind CSS"
+      },
+      {
+        "id": 6,
+        "name": "#shadcnUI"
+      },
+      {
+        "id": 7,
+        "name": "#solidity"
+      },
+      {
+        "id": 8,
+        "name": "#rest API's"
+      }
+    ]
   },
+
   {
-    "id": 4,
-    "name": "#express.js"
+    "chat_app_technologies": [
+      {
+        "id": 1,
+        "name": "#react.js"
+      },
+      {
+        "id": 2,
+        "name": "#node.js"
+      },
+      {
+        "id": 3,
+        "name": "#express.js"
+      },
+      {
+        "id": 4,
+        "name": "#mongoDB"
+      },
+      {
+        "id": 5,
+        "name": "#tailwind CSS"
+      },
+      {
+        "id": 6,
+        "name": "#socket.io"
+      },
+      {
+        "id": 7,
+        "name": "#rest API's"
+      }
+    ]
   },
+
   {
-    "id": 5,
-    "name": "#mongoDB"
+    "course_compass_technologies": [
+      {
+        "id": 1,
+        "name": "#react.js"
+      },
+      {
+        "id": 2,
+        "name": "#node.js"
+      },
+      {
+        "id": 3,
+        "name": "#express.js"
+      },
+      {
+        "id": 4,
+        "name": "#mongoDB"
+      },
+      {
+        "id": 5,
+        "name": "#tailwind CSS"
+      }
+    ]
   },
+
   {
-    "id": 6,
-    "name": "#html"
-  },
-  {
-    "id": 7,
-    "name": "#css"
-  },
-  {
-    "id": 8,
-    "name": "#javascript"
-  },
-  {
-    "id": 9,
-    "name": "#tailwind"
-  },
-  {
-    "id": 10,
-    "name": "#SQL"
-  },
-  {
-    "id": 11,
-    "name": "#redux"
-  },
-  {
-    "id": 12,
-    "name": "#solidity"
-  },
-  {
-    "id": 13,
-    "name": "#socket.io"
-  },
-  {
-    "id": 14,
-    "name": "#github"
+    "klimate_technologies": [
+      {
+        "id": 1,
+        "name": "#react.js"
+      },
+      {
+        "id": 2,
+        "name": "#tanstack query"
+      },
+      {
+        "id": 3,
+        "name": "#openweather API"
+      },
+      {
+        "id": 4,
+        "name": "#shadcnUI"
+      },
+      {
+        "id": 5,
+        "name": "#tailwind CSS"
+      }
+    ]
   }
 ]

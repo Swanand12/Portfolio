@@ -13,11 +13,13 @@ import logo from "../assets/logo_blue_outline.svg";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
+import { useScrollEvent } from "../context/ScrollEventContext";
 
-const Contact = ({ scrollToHeroPage }) => {
+const Contact = () => {
   const form = useRef();
   const [loading, setLoading] = useState(false);
   const [tooltipAnimation, setTooltipAnimation] = useState(false);
+  const { contactRef, scrollToHeroPage } = useScrollEvent();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -50,7 +52,10 @@ const Contact = ({ scrollToHeroPage }) => {
   };
   return (
     <>
-      <div className="h-auto min-h-[100vh]  font-Nunito px-10 bg-white">
+      <div
+        ref={contactRef}
+        className="h-auto min-h-[100vh]  font-Nunito sm:px-10 px-2 bg-white"
+      >
         <div className="flex bg-white justify-center ">
           <h1 className="text-[2.2rem] font-bold px-5 py-2 border-[3px] border-[#1595b6] rounded-xl text-[#1595b6]">
             Lets connect
@@ -71,7 +76,7 @@ const Contact = ({ scrollToHeroPage }) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.7 }}
             transition={{ duration: 0.7, ease: "easeInOut" }}
-            className="lg:w-1/2 w-full px-5 py-5 space-y-2"
+            className="lg:w-1/2 w-full px-5  py-5 space-y-2"
           >
             <form onSubmit={sendEmail} ref={form}>
               <div className="flex flex-col gap-1">
@@ -81,6 +86,7 @@ const Contact = ({ scrollToHeroPage }) => {
                 <input
                   type="text"
                   name="from_name"
+                  placeholder="Enter your name..."
                   className="border-2 border-gray-300 px-4 py-2 focus:border-none focus:outline-none focus:ring-4 rounded-lg "
                 />
               </div>
@@ -91,6 +97,7 @@ const Contact = ({ scrollToHeroPage }) => {
                 <input
                   type="email"
                   name="from_email"
+                  placeholder="Enter your email..."
                   className="border-2 border-gray-300 px-4 py-2 focus:border-none focus:outline-none focus:ring-4 rounded-lg "
                 />
               </div>
@@ -101,6 +108,7 @@ const Contact = ({ scrollToHeroPage }) => {
                 <textarea
                   name="message"
                   rows={6}
+                  placeholder="Type message here..."
                   className="border-2 border-gray-300 px-4 py-2 focus:border-none focus:outline-none focus:ring-4 rounded-lg "
                 />
               </div>
@@ -129,7 +137,7 @@ const Contact = ({ scrollToHeroPage }) => {
         </div>
 
         {/* Footer */}
-        <div className="flex flex-col items-center justify-center gap-8 pt-10">
+        <div className="flex flex-col items-center justify-center gap-8 pt-5 lg:pt-10">
           <span className="text-sm text-gray-400">
             Made by Swanand Sawant &copy; 2025
           </span>
@@ -140,24 +148,43 @@ const Contact = ({ scrollToHeroPage }) => {
             className="group relative px-4"
           >
             <img className="h-[3rem] cursor-pointer" src={logo} alt="logo" />
-            <motion.button
-              initial={{ x: -50, opacity: 0 }}
-              animate={{
-                x: tooltipAnimation ? 0 : -50,
-                opacity: tooltipAnimation ? 1 : 0,
-              }}
-              transition={{
-                duration: 0.3,
-                ease: [0.68, -0.55, 0.265, 1.55],
-              }}
-              onClick={scrollToHeroPage}
-              className=" text-white absolute bg-[#1788AE] px-3 py-1.5 whitespace-nowrap top-[0.5rem] text-sm font-semibold tracking wide left-[4.5rem] rounded-md before:content-[' '] before:rounded-sm before before:bg-[#1788AE] before:absolute before:-top-1.5 before:rotate-45 before:left-12 before:w-4 before:h-4 before:z-10"
-            >
-              Scroll to top
-            </motion.button>
+            {window.innerWidth >= 1024 ? (
+              <motion.button
+                initial={{ x: -50, opacity: 0 }}
+                animate={{
+                  x: tooltipAnimation ? 0 : -50,
+                  opacity: tooltipAnimation ? 1 : 0,
+                }}
+                transition={{
+                  duration: 0.3,
+                  ease: [0.68, -0.55, 0.265, 1.55],
+                }}
+                onClick={scrollToHeroPage}
+                className=" text-white absolute bg-[#1788AE] px-3 py-1.5 whitespace-nowrap top-[0.5rem] text-sm font-semibold tracking wide left-[4.5rem] rounded-md before:content-[' '] before:rounded-sm before before:bg-[#1788AE] before:absolute before:-top-1.5 before:rotate-45 before:left-12 before:w-4 before:h-4 before:z-10"
+              >
+                Scroll to top
+              </motion.button>
+            ) : (
+              <motion.button
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{
+                  x: 0,
+                  opacity: 1,
+                }}
+                viewport={{ amount: 1 }}
+                transition={{
+                  duration: 0.3,
+                  ease: [0.68, -0.55, 0.265, 1.55],
+                }}
+                onClick={scrollToHeroPage}
+                className=" text-white absolute bg-[#1788AE] px-3 py-1.5 whitespace-nowrap top-[0.5rem] text-sm font-semibold tracking wide left-[4.5rem] rounded-md before:content-[' '] before:rounded-sm before before:bg-[#1788AE] before:absolute before:-top-1.5 before:rotate-45 before:left-12 before:w-4 before:h-4 before:z-10"
+              >
+                Scroll to top
+              </motion.button>
+            )}
           </motion.div>
 
-          <ul className="flex gap-6 ">
+          <ul className="flex gap-6 mb-5 lg:mb-0">
             <li className="">
               <a target="_blank" rel="noreferrer" href="www.google.com">
                 <FaLinkedinIn className="text-[#1788AE] duration-200 hover:scale-125 cursor-pointer size-5" />

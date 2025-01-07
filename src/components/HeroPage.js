@@ -12,14 +12,21 @@ import mongo from "../assets/mongo.svg";
 import express from "../assets/express.svg";
 import react from "../assets/react.svg";
 import node from "../assets/node.svg";
-import skills from "../data/skills.json";
+import data from "../data/skills.json";
 import { motion } from "framer-motion";
 import { RxCross1 } from "react-icons/rx";
 import MatterCanvas from "../particles/matter";
+import { useScrollEvent } from "../context/ScrollEventContext";
 
-const HeroPage = ({ heroPageRef, scrollToContent }) => {
+const HeroPage = () => {
   const [showAboutModal, setShowAboutModal] = useState(false);
   const ref = useRef(null);
+  const {
+    heroPageRef,
+    scrollToContentPage,
+    scrollToContactPage,
+    scrollToAboutPage,
+  } = useScrollEvent();
   const [liElementAnimation, setLiAnimation] = useState([
     false,
     false,
@@ -125,6 +132,7 @@ const HeroPage = ({ heroPageRef, scrollToContent }) => {
               </motion.span>
             </motion.li>
             <motion.li
+              onClick={scrollToContactPage}
               onHoverStart={() =>
                 setLiAnimation((prev) => {
                   const updated = [...prev];
@@ -140,16 +148,8 @@ const HeroPage = ({ heroPageRef, scrollToContent }) => {
                 })
               }
             >
-              <button
-                onClick={() =>
-                  window.scrollTo({
-                    y: document.body.scrollHeight,
-                    behavior: "smooth",
-                  })
-                }
-              >
-                <BiLogoGmail className="text-gray-400 hover:text-white duration-200 hover:scale-110 cursor-pointer size-8 md:size-10" />
-              </button>
+              <BiLogoGmail className="text-gray-400 hover:text-white duration-200 hover:scale-110 cursor-pointer size-8 md:size-10" />
+
               <motion.span
                 initial={{ x: "100px", opacity: 0 }}
                 animate={{
@@ -264,7 +264,11 @@ const HeroPage = ({ heroPageRef, scrollToContent }) => {
             </i>
 
             <button
-              onClick={() => setShowAboutModal(true)}
+              onClick={
+                window.innerWidth >= 1024
+                  ? () => setShowAboutModal(true)
+                  : scrollToAboutPage
+              }
               className="w-[6.5rem] sm:w-[7rem] pointer-events-auto text-sm sm:text-normal shadow-custom cursor-pointer focus:outline-none relative hover:scale-110 duration-200 group  py-1.5 sm:py-2 text-white font-semibold rounded-[4px] bg-gradient-to-l from-primary to-[#1f2667e6] "
               type="button"
             >
@@ -276,7 +280,7 @@ const HeroPage = ({ heroPageRef, scrollToContent }) => {
 
         <div className="w-full flex justify-center">
           <button
-            onClick={scrollToContent}
+            onClick={scrollToContentPage}
             className="w-[6.5rem] sm:w-[8rem] text-sm relative -top-3 sm:text-normal shadow-custom cursor-pointer focus:outline-none hover:scale-105 duration-200 group ease-in-out py-1.5 sm:py-2 text-white font-semibold rounded-[4px] bg-gradient-to-l from-primary to-[#1f2667e6]"
             type="button"
           >
@@ -314,7 +318,7 @@ const HeroPage = ({ heroPageRef, scrollToContent }) => {
                 technologies like
               </p>
               <p className="flex flex-wrap gap-3 pb-5">
-                {skills.map((skill) => (
+                {data[0]?.skills.map((skill) => (
                   <p
                     className="text-[13px] border border-gray-500 py-1.5 px-3 rounded-full"
                     key={skill.id}

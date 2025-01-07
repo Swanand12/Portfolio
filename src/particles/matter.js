@@ -3,8 +3,6 @@ import Matter from "matter-js";
 import $ from "jquery";
 
 const MatterCanvas = () => {
-  const canvasRef = useRef(null); // Reference for the canvas container
-
   useEffect(() => {
     var canvas = $("#wrapper-canvas").get(0);
 

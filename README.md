@@ -25,29 +25,29 @@ To run this project locally, follow these steps:
    ```bash
    npm start
 
-# Matter.js Animation Guide
+## Matter.js Animation Guide
 
-## Step 1: Install dependencies
+### Step 1: Install dependencies
    ```bash
    npm install matter-js
    npm install jquery
 ```
 
-## Step 2: Create a matter.js file and add animation code 
+### Step 2: Create a matter.js file and add animation code 
 ![Animation Code](src/particles/matter.js)
 
-## Step 3: Add Matter.js file component to App.js
+### Step 3: Add Matter.js file component to App.js
 ```html
 <MatterCanvas/>
 ```
 
-## Step 4: Add Script Tags to `index.html`
+### Step 4: Add Script Tags to `index.html`
 
 To implement Matter.js animations, include the following script tags in your `index.html` file:
 
-- ### At the End of the `<body>` Tag
+- #### At the End of the `<body>` Tag
 
-Add these external libraries to load the required dependencies for Matter.js:
+-- Add these external libraries to load the required dependencies for Matter.js:
 
 ```html
 <script
@@ -60,9 +60,9 @@ Add these external libraries to load the required dependencies for Matter.js:
 <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>
 ```
 
-- ### At the End of the <head> Tag
+- #### At the End of the <head> Tag
 
-Include your Matter.js script file. Replace the path with the actual file location in your project directory:
+-- Include your Matter.js script file. Replace the path with the actual file location in your project directory:
 
 ```html
 <script src="/src/particles/matter.js" defer></script>

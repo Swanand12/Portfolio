@@ -159,22 +159,27 @@ const Contact = ({ scrollToHeroPage }) => {
 
           <ul className="flex gap-6 ">
             <li className="">
-              <a href="www.google.com">
+              <a target="_blank" rel="noreferrer" href="www.google.com">
                 <FaLinkedinIn className="text-[#1788AE] duration-200 hover:scale-125 cursor-pointer size-5" />
               </a>
             </li>
             <li className="">
-              <a href="www.facebook.com">
+              <a target="_blank" rel="noreferrer" href="www.facebook.com">
                 <BiLogoGmail className="text-[#1788AE] duration-200 hover:scale-125 cursor-pointer size-5" />
               </a>
             </li>
             <li className="">
-              <a href="https://github.com/Swanand12" target="_blank">
+              <a
+                rel="noreferrer"
+                href="https://github.com/Swanand12"
+                target="_blank"
+              >
                 <FaGithub className="text-[#1788AE] duration-200 hover:scale-125 cursor-pointer size-5" />
               </a>
             </li>
             <li className="">
               <a
+                rel="noreferrer"
                 href="https://wa.me/9324441334?text=Message%20through%20swanand%20portfolio"
                 target="_blank"
               >

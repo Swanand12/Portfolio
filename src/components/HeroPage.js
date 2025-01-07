@@ -74,7 +74,7 @@ const HeroPage = ({ heroPageRef, scrollToContent }) => {
                 })
               }
             >
-              <a href="/resume" target="_blank">
+              <a href="/resume" target="_blank" rel="noreferrer">
                 <FaFileAlt className="text-gray-400 hover:text-white duration-200 hover:scale-110 cursor-pointer size-6 md:size-8" />
               </a>
               <motion.span
@@ -108,6 +108,7 @@ const HeroPage = ({ heroPageRef, scrollToContent }) => {
               <a
                 href="https://www.linkedin.com/in/swanandsawant"
                 target="_blank"
+                rel="noreferrer"
               >
                 <FaLinkedinIn className="text-gray-400 hover:text-white duration-200 hover:scale-110 cursor-pointer size-8 md:size-10" />
               </a>
@@ -177,7 +178,11 @@ const HeroPage = ({ heroPageRef, scrollToContent }) => {
                 })
               }
             >
-              <a href="https://github.com/Swanand12" target="_blank">
+              <a
+                href="https://github.com/Swanand12"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaGithub className="text-gray-400 hover:text-white duration-200 hover:scale-110 cursor-pointer size-8 md:size-10" />
               </a>
               <motion.span
@@ -211,6 +216,7 @@ const HeroPage = ({ heroPageRef, scrollToContent }) => {
               <a
                 href="https://wa.me/9324441334?text=Message%20through%20swanand%20portfolio"
                 target="_blank"
+                rel="noreferrer"
               >
                 <RiWhatsappFill className="text-gray-400 hover:text-white duration-200 hover:scale-110 cursor-pointer size-8 md:size-10" />
               </a>

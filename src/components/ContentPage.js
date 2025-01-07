@@ -68,6 +68,7 @@ const ContentPage = ({ contentRef, scrollToHeroPage }) => {
                     <a
                       href="https://job-portal-lhzj.onrender.com"
                       target="_blank"
+                      rel="noreferrer"
                       className="flex items-center gap-1"
                     >
                       Hirrd <GoLinkExternal size={14} strokeWidth={1} />
@@ -78,6 +79,7 @@ const ContentPage = ({ contentRef, scrollToHeroPage }) => {
                     <a
                       href="https://job-portal-lhzj.onrender.com"
                       target="_blank"
+                      rel="noreferrer"
                       className="flex items-center gap-1"
                     >
                       Hirrd <GoLinkExternal size={14} strokeWidth={1} />
@@ -101,6 +103,7 @@ const ContentPage = ({ contentRef, scrollToHeroPage }) => {
                 className="absolute hover:scale-125 lg:block hidden transition-transform duration-150 -right-2 border-[3px] border-[#B91C1C] rounded-full h-4 w-4 bg-white z-50"
                 href="https://job-portal-lhzj.onrender.com"
                 target="_blank"
+                rel="noreferrer"
               ></a>
             </div>
 
@@ -197,6 +200,7 @@ const ContentPage = ({ contentRef, scrollToHeroPage }) => {
                 className="absolute hover:scale-125 lg:block hidden transition-transform duration-150  -left-2 border-[3px] border-[#36D9C4] rounded-full h-4 w-4 bg-white z-50"
                 href="https://job-portal-lhzj.onrender.com"
                 target="_blank"
+                rel="noreferrer"
               ></a>
               <motion.div
                 initial={{ width: 0 }}
@@ -242,6 +246,7 @@ const ContentPage = ({ contentRef, scrollToHeroPage }) => {
                     <a
                       href="https://job-portal-lhzj.onrender.com"
                       target="_blank"
+                      rel="noreferrer"
                       className="flex items-center gap-1"
                     >
                       Sustainify <GoLinkExternal size={14} strokeWidth={1} />
@@ -252,6 +257,7 @@ const ContentPage = ({ contentRef, scrollToHeroPage }) => {
                     <a
                       href="https://job-portal-lhzj.onrender.com"
                       target="_blank"
+                      rel="noreferrer"
                       className="flex items-center gap-1"
                     >
                       Sustainify <GoLinkExternal size={14} strokeWidth={1} />
@@ -307,6 +313,7 @@ const ContentPage = ({ contentRef, scrollToHeroPage }) => {
                     <a
                       href="https://chat-app-1-tutj.onrender.com"
                       target="_blank"
+                      rel="noreferrer"
                       className="flex items-center gap-1"
                     >
                       Chat App <GoLinkExternal size={14} strokeWidth={1} />
@@ -317,6 +324,7 @@ const ContentPage = ({ contentRef, scrollToHeroPage }) => {
                     <a
                       href="https://chat-app-1-tutj.onrender.com"
                       target="_blank"
+                      rel="noreferrer"
                       className="flex items-center gap-1"
                     >
                       Chat App <GoLinkExternal size={14} strokeWidth={1} />
@@ -340,6 +348,7 @@ const ContentPage = ({ contentRef, scrollToHeroPage }) => {
                 className="absolute hover:scale-125 lg:block hidden transition-transform duration-150  -right-2 border-[3px] border-[#399918] rounded-full h-4 w-4 bg-white z-50"
                 href="https://chat-app-1-tutj.onrender.com/"
                 target="_blank"
+                rel="noreferrer"
               ></a>
             </div>
 
@@ -438,6 +447,7 @@ const ContentPage = ({ contentRef, scrollToHeroPage }) => {
                 className="absolute hover:scale-125 lg:block hidden transition-transform duration-150  -left-2 border-[3px] border-[#9F6A00] rounded-full h-4 w-4 bg-white z-50"
                 href="https://chat-app-1-tutj.onrender.com"
                 target="_blank"
+                rel="noreferrer"
               ></a>
               <motion.div
                 initial={{ width: 0 }}
@@ -483,6 +493,7 @@ const ContentPage = ({ contentRef, scrollToHeroPage }) => {
                     <a
                       href="https://job-portal-lhzj.onrender.com"
                       target="_blank"
+                      rel="noreferrer"
                       className="flex items-center gap-1"
                     >
                       Course Compass{" "}
@@ -494,6 +505,7 @@ const ContentPage = ({ contentRef, scrollToHeroPage }) => {
                     <a
                       href="https://job-portal-lhzj.onrender.com"
                       target="_blank"
+                      rel="noreferrer"
                       className="flex items-center gap-1"
                     >
                       Course Compass{" "}
@@ -550,6 +562,7 @@ const ContentPage = ({ contentRef, scrollToHeroPage }) => {
                     <a
                       href="https://klimate-flax.vercel.app"
                       target="_blank"
+                      rel="noreferrer"
                       className="flex items-center gap-1"
                     >
                       Klimate <GoLinkExternal size={14} strokeWidth={1} />
@@ -560,6 +573,7 @@ const ContentPage = ({ contentRef, scrollToHeroPage }) => {
                     <a
                       href="https://klimate-flax.vercel.app"
                       target="_blank"
+                      rel="noreferrer"
                       className="flex items-center gap-1"
                     >
                       Klimate <GoLinkExternal size={14} strokeWidth={1} />
@@ -583,6 +597,7 @@ const ContentPage = ({ contentRef, scrollToHeroPage }) => {
                 className="absolute hidden lg:block hover:scale-125 transition-transform duration-150  -right-2 border-[3px] border-gray-500 rounded-full h-4 w-4 bg-white z-50"
                 href="https://klimate-flax.vercel.app"
                 target="_blank"
+                rel="noreferrer"
               ></a>
             </div>
 

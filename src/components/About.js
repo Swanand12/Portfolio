@@ -14,9 +14,9 @@ const About = () => {
     <>
       <div
         ref={aboutRef}
-        className="flex  flex-col sm:px-20 px-10 pb-10 bg-white"
+        className="flex  flex-col sm:px-20 xs:px-10 px-2 pb-10 bg-white"
       >
-        <div className="flex  justify-center ">
+        <div className="flex lg:pt-5 justify-center ">
           <h1 className="text-[2.2rem] font-bold px-5 py-2 border-[3px] border-[#1595b6] rounded-xl text-[#1595b6]">
             About Me
           </h1>
@@ -28,9 +28,9 @@ const About = () => {
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.7 }}
             transition={{ duration: 0.7, ease: "easeInOut" }}
-            className="  flex flex-col items-center justify-center "
+            className=" flex flex-col items-center justify-center "
           >
-            <img className="h-[fit-content]" src={about} alt="about-image" />
+            <img className="" src={about} alt="about-image" />
           </motion.div>
           <div
             className={` flex flex-col justify-center items-center bg-white`}

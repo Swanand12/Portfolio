@@ -58,7 +58,7 @@ const ContentPage = () => {
               >
                 {window.innerWidth >= 1024 ? (
                   <motion.span
-                    initial={{ y: 300, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     animate={{
                       y: tooltipAnimation[0] ? 0 : 300,
                       opacity: tooltipAnimation[0] ? 1 : 0,
@@ -80,7 +80,7 @@ const ContentPage = () => {
                   </motion.span>
                 ) : (
                   <motion.span
-                    initial={{ y: 300, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ amount: 0 }}
                     transition={{
@@ -220,7 +220,7 @@ const ContentPage = () => {
               >
                 {window.innerWidth >= 1024 ? (
                   <motion.span
-                    initial={{ y: 300, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     animate={{
                       y: tooltipAnimation[1] ? 0 : 300,
                       opacity: tooltipAnimation[1] ? 1 : 0,
@@ -242,7 +242,7 @@ const ContentPage = () => {
                   </motion.span>
                 ) : (
                   <motion.span
-                    initial={{ y: 300, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ amount: 0 }}
                     transition={{
@@ -297,7 +297,7 @@ const ContentPage = () => {
               >
                 {window.innerWidth >= 1024 ? (
                   <motion.span
-                    initial={{ y: 300, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     animate={{
                       y: tooltipAnimation[2] ? 0 : 300,
                       opacity: tooltipAnimation[2] ? 1 : 0,
@@ -319,7 +319,7 @@ const ContentPage = () => {
                   </motion.span>
                 ) : (
                   <motion.span
-                    initial={{ y: 300, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ amount: 0 }}
                     transition={{
@@ -461,7 +461,7 @@ const ContentPage = () => {
               >
                 {window.innerWidth >= 1024 ? (
                   <motion.span
-                    initial={{ y: 300, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     animate={{
                       y: tooltipAnimation[3] ? 0 : 300,
                       opacity: tooltipAnimation[3] ? 1 : 0,
@@ -484,7 +484,7 @@ const ContentPage = () => {
                   </motion.span>
                 ) : (
                   <motion.span
-                    initial={{ y: 300, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ amount: 0 }}
                     transition={{
@@ -540,7 +540,7 @@ const ContentPage = () => {
               >
                 {window.innerWidth >= 1024 ? (
                   <motion.span
-                    initial={{ y: 300, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     animate={{
                       y: tooltipAnimation[4] ? 0 : 300,
                       opacity: tooltipAnimation[4] ? 1 : 0,
@@ -562,7 +562,7 @@ const ContentPage = () => {
                   </motion.span>
                 ) : (
                   <motion.span
-                    initial={{ y: 300, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ amount: 0 }}
                     transition={{

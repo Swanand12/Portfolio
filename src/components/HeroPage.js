@@ -53,18 +53,19 @@ const HeroPage = () => {
       <div className="z-[0] text-white w-full h-100vh absolute  ">
         <MatterCanvas />
       </div>
+      {/* <Menu /> */}
       <motion.div
         ref={heroPageRef}
         className="hero h-[100vh] bg-[#111111]  w-[100%] xs:px-5 sm:px-10 lg:px-20 "
       >
         <div className="header px-4 py-4 w-full flex items-center justify-between">
           <img
-            className="w-[50px] pointer-events-none relative "
+            className="w-[50px]  pointer-events-none relative "
             src={logo_white}
             alt="img.1"
           />
 
-          <ul className="flex gap-6 relative p-4">
+          <ul className="flex gap-4 sm:gap-6 relative sm:p-4">
             <motion.li
               onHoverStart={() =>
                 setLiAnimation((prev) => {
@@ -82,7 +83,7 @@ const HeroPage = () => {
               }
             >
               <a href="/resume" target="_blank" rel="noreferrer">
-                <FaFileAlt className="text-gray-400 hover:text-white duration-200 hover:scale-110 cursor-pointer size-6 md:size-8" />
+                <FaFileAlt className="text-gray-400 hover:text-white duration-200 hover:scale-110 cursor-pointer size-7 md:size-9" />
               </a>
               <motion.span
                 initial={{ x: "100px", opacity: 0 }}
@@ -269,7 +270,7 @@ const HeroPage = () => {
                   ? () => setShowAboutModal(true)
                   : scrollToAboutPage
               }
-              className="w-[6.5rem] sm:w-[7rem] pointer-events-auto text-sm sm:text-normal shadow-custom cursor-pointer focus:outline-none relative hover:scale-110 duration-200 group  py-1.5 sm:py-2 text-white font-semibold rounded-[4px] bg-gradient-to-l from-primary to-[#1f2667e6] "
+              className="w-[7rem] pointer-events-auto text-sm sm:text-normal shadow-custom cursor-pointer focus:outline-none relative hover:scale-110 duration-200 group  py-1.5 sm:py-2 text-white font-semibold rounded-[4px] bg-gradient-to-l from-primary to-[#1f2667e6] "
               type="button"
             >
               About Me
@@ -281,7 +282,7 @@ const HeroPage = () => {
         <div className="w-full flex justify-center">
           <button
             onClick={scrollToContentPage}
-            className="w-[6.5rem] sm:w-[8rem] text-sm relative -top-3 sm:text-normal shadow-custom cursor-pointer focus:outline-none hover:scale-105 duration-200 group ease-in-out py-1.5 sm:py-2 text-white font-semibold rounded-[4px] bg-gradient-to-l from-primary to-[#1f2667e6]"
+            className="w-[8rem] text-sm relative -top-3 sm:text-normal shadow-custom cursor-pointer focus:outline-none hover:scale-105 duration-200 group ease-in-out py-1.5 sm:py-2 text-white font-semibold rounded-[4px] bg-gradient-to-l from-primary to-[#1f2667e6]"
             type="button"
           >
             My Projects
@@ -301,13 +302,13 @@ const HeroPage = () => {
             animate={{ scale: showAboutModal ? 1 : 0 }}
             transition={{ duration: 0.2 }}
             style={{ transformOrigin: "center" }}
-            className={`w-2/3 rounded-xl my-auto flex  px-14 py-10 bg-[#191919]`}
+            className={`xl:w-2/3  rounded-xl my-auto flex  px-14 py-10 bg-[#191919]`}
           >
             <div className="w-1/2">
               <h1 className="text-primary font-semibold text-2xl tracking-widest">
                 ABOUT ME
               </h1>
-              <p className="py-5 text-sm  font-normal tracking-wide">
+              <p className="py-5 text-[14px] xl:text-sm  font-normal tracking-wide">
                 Hello! Myself Swanand Sawant, a Computer Engineering aspirant at
                 Shree L. R. Tiwari College Of Engineering. I have skilled in
                 building Full-stack web applications and have a keen interest in

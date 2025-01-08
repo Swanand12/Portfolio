@@ -49,22 +49,22 @@ const About = () => {
                 solving problems with creative and efficient solutions, using
                 technologies like
               </p>
-              <p className="flex flex-wrap justify-center gap-3 pb-5">
+              <p className="flex flex-wrap justify-center gap-3 pb-5 overflow-visible relative max-w-[100vw]">
                 {data[0]?.skills.map((skill, i) => (
-                  <motion.p
+                  <motion.div
                     initial={{ x: "100%", opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    viewport={{ once: true, amount: 1 }}
+                    whileInView={{ x: "0%", opacity: 1 }}
+                    viewport={{ once: true, amount: 0 }}
                     transition={{
                       duration: 0.3,
-                      delay: 0.3 * i,
+                      delay: 0.4 * i,
                       ease: [0.68, -0.55, 0.265, 1.55],
                     }}
                     className="text-sm border border-gray-500 py-1.5 px-3 rounded-full"
-                    key={skill.id}
+                    key={skill.id - i}
                   >
                     {skill.name}
-                  </motion.p>
+                  </motion.div>
                 ))}
               </p>
 

@@ -11,6 +11,7 @@
     "@tsparticles/react": "^3.0.0",
     "framer-motion": "^11.15.0",
     "jquery": "^3.7.1",
+    "lenis": "^1.1.18",
     "matter-js": "^0.20.0",
     "pdfjs-dist": "^4.10.38",
     "react": "^18.3.1",

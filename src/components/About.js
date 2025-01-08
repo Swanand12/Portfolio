@@ -74,7 +74,7 @@ const About = () => {
               <div className="grid grid-cols-2 sm:grid-cols-4  sm:gap-6 gap-10 items-center">
                 <div className="flex flex-col gap-5 items-center  cursor-pointer pointer-events-none">
                   <motion.span
-                    initial={{ y: 300, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true, amount: 0 }}
                     transition={{
@@ -101,7 +101,7 @@ const About = () => {
                 </div>
                 <div className="flex flex-col gap-5 items-center  cursor-pointer pointer-events-none">
                   <motion.span
-                    initial={{ y: 300, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true, amount: 0 }}
                     transition={{
@@ -129,7 +129,7 @@ const About = () => {
                 </div>
                 <div className="flex flex-col gap-5 items-center  cursor-pointer pointer-events-none">
                   <motion.span
-                    initial={{ y: 300, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true, amount: 0 }}
                     transition={{
@@ -157,7 +157,7 @@ const About = () => {
                 </div>
                 <div className="flex flex-col gap-5 items-center  cursor-pointer pointer-events-none">
                   <motion.span
-                    initial={{ y: 300, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true, amount: 0 }}
                     transition={{

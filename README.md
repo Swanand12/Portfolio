@@ -27,16 +27,16 @@ To run this project locally, follow these steps:
 
 ## Matter.js Animation Guide
 
-### Step 1: Install dependencies
+#### Step 1: Install dependencies
    ```bash
    npm install matter-js
    npm install jquery
 ```
 
-### Step 2: Create a matter.js file and add animation code 
+#### Step 2: Create a matter.js file and add animation code 
 [Animation Code](src/particles/matter.js)
 
-### Step 3: Add Matter.js file component to App.js
+#### Step 3: Add Matter.js file component to App.js
 ```html
 <MatterCanvas/>
 ```

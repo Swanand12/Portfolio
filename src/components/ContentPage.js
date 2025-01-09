@@ -165,11 +165,16 @@ const ContentPage = () => {
                 (Energy Trading Portal)
               </span>
               <p className="font-semibold lg:text-start text-center">
-                Sustainify is a sustainable energy network that enables
-                peer-to-peer solar energy trading using blockchain technology.
-                It includes features like energy bidding and automatic energy
-                transfer for surplus production. The project focuses on
-                optimizing energy distribution through a decentralized
+                Sustainify is the peer-to-peer energy trading platform
+                leveraging blockchain technology to ensure secure and
+                transparent transactions.The platform uses a private blockchain
+                network to ensure security and transparency in transactions. Key
+                features include the ability for prosumers to post bids for
+                selling excess energy, while consumers can bid on these posts
+                based on their needs. Both prosumers and consumers can track
+                their energy tokens on a personalized dashboard, monitor bid
+                statuses, and view their transaction history for complete
+                transparency.
               </p>
               <div className="skills flex flex-wrap lg:justify-start justify-center  gap-3 pt-2 pb-5">
                 {data[2]?.sustainify_technologies.map((h) => (

@@ -1,5 +1,5 @@
 # Portfolio
-This repository contains the source code for my personal portfolio website. The website showcases my skills, projects, and professional journey. It's designed to provide visitors with insights into my work and capabilities, serving as an online resume and a platform to connect with me.
+This repository contains the source code for my personal portfolio website. The website showcases my skills and projects. It's designed to provide visitors with insights into my work and capabilities, serving as an online resume and a platform to connect with me.
 
 ## Live Demo
 A live demo of the application is hosted at [https://sawantswanand.vercel.app](https://sawantswanand.vercel.app)

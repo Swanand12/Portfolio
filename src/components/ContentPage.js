@@ -395,7 +395,7 @@ const ContentPage = () => {
                   className='cursor-pointer w-[fit-content] shadow-xl mb-6 bg-gray-500 px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-gray-500 after:absolute after:rotate-45 after:top-7  '
                 >
                   <a
-                    href="https://klimate-weather.vercel.app"
+                    href="https://klimate-weather.netlify.app"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-1"

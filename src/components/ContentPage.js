@@ -11,6 +11,9 @@ import klimate from "../assets/klimate.png";
 import data from "../data/skills.json";
 import { useScrollEvent } from "../context/ScrollEventContext";
 import About from "./About";
+import { BiCheckCircle } from "react-icons/bi";
+import { FaCircleCheck } from "react-icons/fa6";
+import { FaAdjust } from "react-icons/fa";
 
 const ContentPage = () => {
   const { contentRef, scrollToHeroPage } = useScrollEvent();
@@ -83,9 +86,12 @@ const ContentPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.9, ease: "easeInOut" }}
-              className="lg:w-1/2 w-full ml-auto sm:px-10 px-2 py-10 flex flex-col items-center gap-2.5"
+              className="lg:w-1/2 w-full ml-auto sm:px-10 px-2 py-10 flex flex-col lg:items-start items-center gap-2.5"
             >
-              <h1 className="text-[#B91C1C] text-3xl font-bold">Hirrd</h1>
+              <h1 className="text-[#B91C1C] text-3xl flex items-center gap-3 font-bold">
+                Hirrd <FaCircleCheck size={20} />
+              </h1>
+
               <span className="text-[#B91C1C] text-xl font-semibold">
                 (Job Portal)
               </span>
@@ -117,7 +123,9 @@ const ContentPage = () => {
               transition={{ duration: 0.9, ease: "easeInOut" }}
               className="lg:w-1/2 w-full ml-auto sm:px-10 px-2 py-10 flex flex-col lg:items-start items-center gap-2.5"
             >
-              <h1 className="text-[#36D9C4] text-3xl font-bold">Sustainify</h1>
+              <h1 className="text-[#36D9C4] text-3xl flex items-center gap-3 font-bold">
+                Sustainify <FaAdjust size={20} />
+              </h1>
               <span className="text-[#36D9C4] text-xl font-semibold">
                 (Energy Trading Portal)
               </span>
@@ -255,7 +263,9 @@ const ContentPage = () => {
               transition={{ duration: 0.9, ease: "easeInOut" }}
               className="lg:w-1/2 w-full ml-auto sm:px-10 px-2 py-10 flex flex-col lg:items-start items-center gap-2.5"
             >
-              <h1 className="text-[#399918] text-3xl font-bold">Chat App</h1>
+              <h1 className="text-[#399918] text-3xl flex items-center gap-3 font-bold">
+                Chat App <FaCircleCheck size={20} />
+              </h1>
               <span className="text-[#399918] text-xl font-semibold">
                 (Real Time Chatting Application)
               </span>
@@ -287,8 +297,8 @@ const ContentPage = () => {
               transition={{ duration: 0.9, ease: "easeInOut" }}
               className="lg:w-1/2 w-full ml-auto sm:px-10 px-2 py-10 flex flex-col lg:items-start items-center gap-2.5"
             >
-              <h1 className="text-[#9F6A00] text-3xl font-bold">
-                Course Compass
+              <h1 className="text-[#9F6A00] text-3xl flex items-center gap-3 font-bold">
+                Course Compass <FaAdjust size={20} />
               </h1>
               <span className="text-[#9F6A00] text-xl font-semibold">
                 (Online Learning Platform)
@@ -422,7 +432,9 @@ const ContentPage = () => {
               transition={{ duration: 0.9, ease: "easeInOut" }}
               className="lg:w-1/2 w-full ml-auto sm:px-10 px-2 py-10 flex flex-col lg:items-start items-center gap-2.5"
             >
-              <h1 className="text-gray-500 text-3xl font-bold">Klimate</h1>
+              <h1 className="text-gray-500 text-3xl flex items-center gap-3 font-bold">
+                Klimate <FaCircleCheck size={20} />
+              </h1>
               <span className="text-gray-500 text-xl font-semibold">
                 (Weather App)
               </span>

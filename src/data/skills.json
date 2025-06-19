@@ -35,7 +35,7 @@
       },
       {
         "id": 9,
-        "name": "#tailwind"
+        "name": "#tailwindCss"
       },
       {
         "id": 10,
@@ -54,8 +54,53 @@
         "name": "#socket.io"
       },
       {
+        "id": 13,
+        "name": "#selenium"
+      },
+      {
+        "id": 13,
+        "name": "#flask"
+      },
+      {
         "id": 14,
-        "name": "#github"
+        "name": "#git"
+      }
+    ]
+  },
+
+  {
+    "studyAbroad_chatbot": [
+      {
+        "id": 1,
+        "name": "#react.js"
+      },
+      {
+        "id": 2,
+        "name": "#node.js"
+      },
+      {
+        "id": 3,
+        "name": "#express.js"
+      },
+      {
+        "id": 4,
+        "name": "#mongoDB"
+      },
+      {
+        "id": 5,
+        "name": "#tailwind CSS"
+      },
+      {
+        "id": 6,
+        "name": "#flask"
+      },
+      {
+        "id": 7,
+        "name": "#shadcnUI"
+      },
+      {
+        "id": 8,
+        "name": "#rest API's"
       }
     ]
   },

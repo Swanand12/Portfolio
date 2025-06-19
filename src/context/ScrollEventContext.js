@@ -33,7 +33,7 @@ const ScrollEventProvider = ({ children }) => {
   };
 
   const scrollToAboutPage = () => {
-    aboutRef.current.scrollIntoView({
+    aboutRef?.current?.scrollIntoView({
       behavior: "smooth",
     });
   };

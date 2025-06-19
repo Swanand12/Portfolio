@@ -40,14 +40,21 @@ const About = () => {
                 ABOUT ME
               </h1>
               <p className="py-5 text-center  font-semibold tracking-wide">
-                Hello! Myself Swanand Sawant, a Computer Engineering aspirant at
-                Shree L. R. Tiwari College Of Engineering. I have skilled in
-                building Full-stack web applications and have a keen interest in
-                Python problem-solving and blockchain technology. My Aim is to
-                draw a meaningful impact by developing innovative software
-                solutions and to spontaneously grow as an engineer. I thrive on
-                solving problems with creative and efficient solutions, using
-                technologies like
+                I'm Swanand Sawant, a Computer Engineering student at Shree L.
+                R. Tiwari College of Engineering with practical experience in
+                full-stack development using the MERN stack, HTML, CSS,
+                JavaScript, SQL as well as Python and Flask. I’ve applied these
+                skills in both academic and independent projects. Notably, I
+                built Sustainify, a blockchain-based peer-to-peer energy trading
+                platform selected for the Smart India Hackathon Grand Finale,
+                and StudyAbroad Chatbot, a virtual assistant for guiding
+                students through international study processes.I’ve also worked
+                on freelance projects, such as developing portfolio websites for
+                clients like Finwin Solutions, and interned as a Frontend
+                Developer, where I created responsive, user-friendly interfaces
+                for an online learning platform. These diverse experiences have
+                strengthened my ability to learn quickly, adapt to new
+                technologies, and build real-world applications.
               </p>
               <p className="flex flex-wrap justify-center gap-3 pb-5 overflow-visible relative max-w-[100vw]">
                 {data[0]?.skills.map((skill, i) => (

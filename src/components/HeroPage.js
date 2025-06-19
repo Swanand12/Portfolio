@@ -309,27 +309,28 @@ const HeroPage = () => {
                 ABOUT ME
               </h1>
               <p className="py-5 text-[14px] xl:text-sm  font-normal tracking-wide">
-                Hello! Myself Swanand Sawant, a Computer Engineering aspirant at
-                Shree L. R. Tiwari College Of Engineering. I have skilled in
-                building Full-stack web applications and have a keen interest in
-                Python problem-solving and blockchain technology. My Aim is to
-                draw a meaningful impact by developing innovative software
-                solutions and to spontaneously grow as an engineer. I thrive on
-                solving problems with creative and efficient solutions, using
-                technologies like
+                I'm Swanand Sawant, a Computer Engineering graduate from with
+                practical experience in full-stack development using the MERN
+                stack, along with Python, Flask, SQL, and core web technologies.
+                I've built projects like Sustainify, a blockchain-based energy
+                trading platform selected for the Smart India Hackathon Grand
+                Finale, and the StudyAbroad Chatbot for student guidance. I’ve
+                also worked on freelance portfolio websites and interned as a
+                Frontend Developer, creating responsive interfaces. These
+                experiences have strengthened my adaptability, quick learning,
+                and ability to build real-world applications.
               </p>
-              <p className="flex flex-wrap gap-3 pb-5">
+              <p className="flex flex-wrap gap-1 pb-5">
                 {data[0]?.skills.map((skill) => (
                   <p
-                    className="text-[13px] border border-gray-500 py-1.5 px-3 rounded-full"
+                    className="text-[13px] border bg-primary text-black font-semibold border-gray-500 py-1 px-3 rounded-full"
                     key={skill.id}
                   >
                     {skill.name}
                   </p>
                 ))}
               </p>
-
-              <h1 className="pt-8 pb-4 text-primary font-semibold text-2xl tracking-widest">
+              <h1 className=" pb-4 text-primary font-semibold text-2xl tracking-widest">
                 MERN STACK
               </h1>
               <div className="flex gap-14 pt-14 ">
@@ -511,6 +512,7 @@ const HeroPage = () => {
                 </motion.div>
               </div>
             </div>
+
             <div className="w-1/2 relative flex flex-col items-center justify-center ">
               <button
                 onClick={() => setShowAboutModal(false)}

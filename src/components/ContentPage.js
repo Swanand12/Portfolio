@@ -1,17 +1,15 @@
-import React, { useState } from "react";
 import Contact from "./Contact";
 import { motion } from "framer-motion";
 import { GoLinkExternal } from "react-icons/go";
+import studyabroad_chatbot from "../assets/studyabroad_chatbot.svg";
 import hirrd from "../assets/hirrd.svg";
 import sustainify from "../assets/sustainify.svg";
 import chat_app from "../assets/chat_app.png";
 import course_compass from "../assets/course_compass.png";
 import klimate from "../assets/klimate.png";
-// import AchievementsAndCertifications from "./AchievementsAndCertifications";
 import data from "../data/skills.json";
 import { useScrollEvent } from "../context/ScrollEventContext";
 import About from "./About";
-import { BiCheckCircle } from "react-icons/bi";
 import { FaCircleCheck } from "react-icons/fa6";
 import { FaAdjust } from "react-icons/fa";
 
@@ -29,6 +27,96 @@ const ContentPage = () => {
 
         {/* Projects */}
         <div className="projects relative px-5 py-8 w-full bg-white">
+          {/* Project 0*/}
+          <div className="w-full flex lg:flex-row flex-col-reverse py-8">
+            <motion.div
+              initial={{ opacity: 0, x: -70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.7 }}
+              transition={{ duration: 0.9, ease: "easeInOut" }}
+              className="lg:w-1/2 w-full ml-auto sm:px-10 px-2 py-10 flex flex-col lg:items-start items-center gap-2.5"
+            >
+              <h1 className="text-[#512da8] text-3xl flex items-center gap-3 font-bold">
+                StudyAbroad Chatbot <FaAdjust size={20} />
+              </h1>
+              <span className="text-[#512da8] text-xl font-semibold">
+                (Virtual Intelligent Assisstant)
+              </span>
+              <p className="font-semibold lg:text-start text-center">
+                The Study Abroad Chatbot is a MERN stack application designed to
+                assist students in their study abroad journey by offering
+                personalized guidance on university selection, courses,
+                scholarships, tuition fees, and more. It integrates FastAPI with
+                a Retrieval-Augmented Generation (RAG) model to fetch relevant
+                data and uses Gemini to deliver accurate, context-aware
+                responses in natural language. This ensures students receive
+                timely and reliable information through an interactive and
+                user-friendly interface.
+              </p>
+              <div className="skills flex flex-wrap lg:justify-start justify-center  gap-3 pt-2 pb-5">
+                {data[1]?.studyAbroad_chatbot.map((h) => (
+                  <p
+                    key={h?.id}
+                    className="text-sm border border-gray-300 bg-[#512da8] text-white font-semibold py-1 px-3 rounded-full"
+                  >
+                    {h?.name}
+                  </p>
+                ))}
+              </div>
+            </motion.div>
+
+            <div className="relative lg:w-1/2 w-full flex items-center">
+              <a
+                className="absolute hover:scale-125 lg:block hidden transition-transform duration-150  -left-2 border-[3px] border-[#512da8] rounded-full h-4 w-4 bg-white z-50"
+                href="https://github.com/Swanand12/StudyAbroad-Chatbot"
+                target="_blank"
+                rel="noreferrer"
+              ></a>
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: "50%" }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ delay: 0.9, duration: 0.9, ease: "easeInOut" }}
+                className="absolute lg:block hidden left-0 z-0 h-[2px] bg-[#512da8]"
+              ></motion.div>
+              <motion.div
+                className="lg:w-[fit-content] w-full flex flex-col items-center ml-auto cursor-pointer group relative lg:pr-5"
+                initial={{ opacity: 0, x: 70 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.7 }}
+                transition={{ duration: 0.9, ease: "easeInOut" }}
+              >
+                <motion.span
+                  initial={{ y: 100, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ amount: 0 }}
+                  transition={{
+                    duration: 0.3,
+                    delay: 1,
+                    ease: [0.68, -0.55, 0.265, 1.55],
+                  }}
+                  className='cursor-pointer w-[fit-content] shadow-xl mb-6 bg-[#512da8]  px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#512da8] after:absolute after:rotate-45 after:top-7  '
+                >
+                  <a
+                    href="https://github.com/Swanand12/StudyAbroad-Chatbot"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-1"
+                  >
+                    StudyAbroad - Chatbot{" "}
+                    <GoLinkExternal size={14} strokeWidth={1} />
+                  </a>
+                </motion.span>
+
+                <img
+                  className="xl:w-[450px] w-[400px] z-20 relative hover:scale-110 duration-300"
+                  src={studyabroad_chatbot}
+                  alt="demo"
+                />
+              </motion.div>
+            </div>
+          </div>
+
           {/* Project 1 */}
           <div className="w-full flex lg:flex-row flex-col py-8">
             <div className="relative  lg:w-1/2 w-full flex items-center">
@@ -86,7 +174,7 @@ const ContentPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.9, ease: "easeInOut" }}
-              className="lg:w-1/2 w-full ml-auto sm:px-10 px-2 py-10 flex flex-col lg:items-start items-center gap-2.5"
+              className="lg:w-1/2 w-full ml-auto  sm:px-10 px-2 py-10 flex flex-col lg:items-start items-center gap-2.5"
             >
               <h1 className="text-[#B91C1C] text-3xl flex items-center gap-3 font-bold">
                 Hirrd <FaCircleCheck size={20} />
@@ -96,16 +184,18 @@ const ContentPage = () => {
                 (Job Portal)
               </span>
               <p className="font-semibold lg:text-start text-center">
-                Hirrd is a full-stack job portal that connects recruiters with
-                candidates, allowing recruiters to hire and candidates to apply
-                for jobs. It streamlines the recruitment process, making it
-                easier for both parties to find the right opportunities.
+                Hirrd is a full-stack job portal built with the MERN stack
+                (MongoDB, Express.js, React.js, Node.js) that connects
+                recruiters with candidates, allowing recruiters to hire and
+                candidates to apply for jobs. It streamlines the recruitment
+                process, making it easier for both parties to find the right
+                opportunities.
               </p>
               <div className="skills flex flex-wrap lg:justify-start justify-center gap-3 pt-2 pb-5">
-                {data[1]?.hirrd_technologies.map((h) => (
+                {data[2]?.hirrd_technologies.map((h) => (
                   <p
                     key={h?.id}
-                    className="text-sm border border-gray-300 font-semibold py-1 px-3 rounded-full"
+                    className="text-sm border bg-[#B91C1C] text-white border-gray-300 font-semibold py-1 px-3 rounded-full"
                   >
                     {h?.name}
                   </p>
@@ -127,25 +217,25 @@ const ContentPage = () => {
                 Sustainify <FaAdjust size={20} />
               </h1>
               <span className="text-[#36D9C4] text-xl font-semibold">
-                (Energy Trading Portal)
+                (P2P Energy Trading Portal)
               </span>
               <p className="font-semibold lg:text-start text-center">
-                Sustainify is the peer-to-peer energy trading platform
-                leveraging blockchain technology to ensure secure and
-                transparent transactions.The platform uses a private blockchain
-                network to ensure security and transparency in transactions. Key
-                features include the ability for prosumers to post bids for
-                selling excess energy, while consumers can bid on these posts
-                based on their needs. Both prosumers and consumers can track
-                their energy tokens on a personalized dashboard, monitor bid
-                statuses, and view their transaction history for complete
-                transparency.
+                Sustainify is a decentralized peer-to-peer energy trading
+                platform that allows prosumers with rooftop solar panels to sell
+                surplus energy to consumers using the grid as a mediator for
+                secure and reliable transfers. The platform uses blockchain
+                technology and smart contracts to ensure transparent, automated
+                energy transactions. I developed the entire software system
+                using the MERN stack for the web application and integrated
+                blockchain through Solidity-based smart contracts. Sustainify
+                aims to promote sustainability, lower energy costs, and support
+                a transparent, decentralized energy ecosystem.
               </p>
               <div className="skills flex flex-wrap lg:justify-start justify-center  gap-3 pt-2 pb-5">
-                {data[2]?.sustainify_technologies.map((h) => (
+                {data[3]?.sustainify_technologies.map((h) => (
                   <p
                     key={h?.id}
-                    className="text-sm border border-gray-300 font-semibold py-1 px-3 rounded-full"
+                    className="text-sm border border-gray-300  bg-[#36D9C4] text-white font-semibold py-1 px-3 rounded-full"
                   >
                     {h?.name}
                   </p>
@@ -156,7 +246,7 @@ const ContentPage = () => {
             <div className="relative lg:w-1/2 w-full flex items-center">
               <a
                 className="absolute hover:scale-125 lg:block hidden transition-transform duration-150  -left-2 border-[3px] border-[#36D9C4] rounded-full h-4 w-4 bg-white z-50"
-                href="https://job-portal-lhzj.onrender.com"
+                href="https://github.com/Swanand12/Sustainify"
                 target="_blank"
                 rel="noreferrer"
               ></a>
@@ -186,7 +276,7 @@ const ContentPage = () => {
                   className='cursor-pointer w-[fit-content] shadow-xl mb-6 bg-[#36D9C4]  px-6 py-[5px] items-center rounded-md text-white font-semibold flex justify-center after:content-[""] after:w-3 after:h-3 after:bg-[#36D9C4] after:absolute after:rotate-45 after:top-7  '
                 >
                   <a
-                    href="https://job-portal-lhzj.onrender.com"
+                    href="https://github.com/Swanand12/Sustainify"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-1"
@@ -270,16 +360,23 @@ const ContentPage = () => {
                 (Real Time Chatting Application)
               </span>
               <p className="font-semibold lg:text-start text-center">
-                Chat-App is a full-stack chatting platform that provides
-                real-time communication using Socket.io. It offers features like
-                one-to-one messaging, group chats, and comprehensive CRUD
-                operations for managing conversations and user data.
+                Chat App is a real-time messaging application built using the
+                MERN stack, allowing users to search for friends, chat
+                one-on-one, and manage group chats with features like
+                adding/removing members and leaving groups. It supports
+                real-time messaging and notifications similar to WhatsApp,
+                powered by Socket.io. I developed a responsive and user-friendly
+                interface, implemented backend functionality with authentication
+                and APIs, and used MongoDB for data storage. Profile photos are
+                uploaded to Cloudinary for optimized image delivery, and a
+                typing indicator using debouncing was added to enhance the
+                overall chat experience.
               </p>
               <div className="skills flex flex-wrap lg:justify-start justify-center  gap-3 pt-2 pb-5">
-                {data[3]?.chat_app_technologies.map((h) => (
+                {data[4]?.chat_app_technologies.map((h) => (
                   <p
                     key={h?.id}
-                    className="text-sm border border-gray-300 font-semibold py-1 px-3 rounded-full"
+                    className="text-sm border border-gray-300 bg-[#399918] text-white font-semibold py-1 px-3 rounded-full"
                   >
                     {h?.name}
                   </p>
@@ -304,17 +401,23 @@ const ContentPage = () => {
                 (Online Learning Platform)
               </span>
               <p className="font-semibold lg:text-start text-center">
-                I worked as a frontend developer on a Course Compass during my
-                internship, designed to offer experiential courses to students.
-                The platform integrates interactive quizzes, live lectures,
-                practical projects, and an AI tutor to enhance learning by
-                providing personalized support and real-time engagement.
+                I worked as a Frontend Developer Intern at Course Compass, where
+                I contributed to building a full-fledged Learning Management
+                System (LMS) for students and teachers. The platform included
+                features like live classes, chats, quizzes, project submissions,
+                and doubt resolution through teachers or a chatbot. My role
+                focused on developing responsive, user-friendly interfaces using
+                React, collaborating with the backend team for seamless API
+                integration, and managing global state with Context API. I also
+                implemented performance optimizations such as memoization and
+                lazy loading, while ensuring code reusability through modular
+                component design.
               </p>
               <div className="skills flex flex-wrap lg:justify-start justify-center gap-3 pt-2 pb-5">
-                {data[4]?.course_compass_technologies.map((h) => (
+                {data[5]?.course_compass_technologies.map((h) => (
                   <p
                     key={h?.id}
-                    className="text-sm border border-gray-300 font-semibold py-1 px-3 rounded-full"
+                    className="text-sm border border-gray-300 bg-[#9F6A00] text-white font-semibold py-1 px-3 rounded-full"
                   >
                     {h?.name}
                   </p>
@@ -446,10 +549,10 @@ const ContentPage = () => {
                 hourly forecasts.
               </p>
               <div className="skills flex flex-wrap lg:justify-start justify-center gap-3 pt-2 pb-5">
-                {data[5]?.klimate_technologies.map((h) => (
+                {data[6]?.klimate_technologies.map((h) => (
                   <p
                     key={h?.id}
-                    className="text-sm border border-gray-300 font-semibold py-1 px-3 rounded-full"
+                    className="text-sm border border-gray-300 bg-gray-500 text-white font-semibold py-1 px-3 rounded-full"
                   >
                     {h?.name}
                   </p>

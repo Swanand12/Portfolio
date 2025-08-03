@@ -4,7 +4,7 @@ This repository contains the source code for my personal portfolio website. The 
 ## Live Demo
 A live demo of the application is hosted at [https://sawantswanand.vercel.app](https://sawantswanand.vercel.app)
 
-![Alt text](src/assets/portfolio.png)
+![Alt text](src/assets/portfolio.webp)
 ## Built With
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for creating custom designs.

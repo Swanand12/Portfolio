@@ -8,8 +8,8 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { BiLogoGmail } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import contact_img from "../assets/contact_image.svg";
-import logo from "../assets/logo_blue_outline.svg";
+import contact_img from "../assets/contact_image.webp";
+import logo from "../assets/logo_blue_outline.webp";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
@@ -54,7 +54,7 @@ const Contact = () => {
     <>
       <div
         ref={contactRef}
-        className="h-auto min-h-[100vh]  font-Nunito sm:px-10 px-2 bg-white"
+        className="h-auto min-h-[100vh] bg-black font-Nunito sm:px-10 px-2 bg-white"
       >
         <div className="flex bg-white justify-center ">
           <h1 className="text-[2.2rem] font-bold px-5 py-2 border-[3px] border-[#1595b6] rounded-xl text-[#1595b6]">
@@ -138,7 +138,7 @@ const Contact = () => {
 
         {/* Footer */}
         <div className="flex flex-col items-center justify-center gap-8 pt-5 lg:pt-10">
-          <span className="text-sm text-gray-400">
+          <span className="text-sm text-black">
             Made by Swanand Sawant &copy; 2025
           </span>
 

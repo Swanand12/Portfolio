@@ -1,10 +1,10 @@
 import React from "react";
-import about from "../assets/about_image.svg";
+import about from "../assets/about_image.webp";
 import data from "../data/skills.json";
-import mongo from "../assets/mongo.svg";
-import express from "../assets/express.svg";
-import react from "../assets/react.svg";
-import node from "../assets/node.svg";
+import mongo from "../assets/mongo.webp";
+import express from "../assets/express.webp";
+import react from "../assets/react.webp";
+import node from "../assets/node.webp";
 import { motion } from "framer-motion";
 import { useScrollEvent } from "../context/ScrollEventContext";
 
@@ -39,7 +39,7 @@ const About = () => {
               <h1 className="text-primary font-semibold text-2xl tracking-widest">
                 ABOUT ME
               </h1>
-              <p className="py-5 text-center  font-semibold tracking-wide">
+              <p className="py-5 text-center text-sm sm:text-normal  font-semibold tracking-wide">
                 I'm Swanand Sawant, a Computer Engineering student at Shree L.
                 R. Tiwari College of Engineering with practical experience in
                 full-stack development using the MERN stack, HTML, CSS,
@@ -64,10 +64,10 @@ const About = () => {
                     viewport={{ once: true, amount: 0 }}
                     transition={{
                       duration: 0.3,
-                      delay: 0.4 * i,
+                      delay: 0.2 * i,
                       ease: [0.68, -0.55, 0.265, 1.55],
                     }}
-                    className="text-sm border border-gray-500 py-1.5 px-3 rounded-full"
+                    className="text-[12px] sm:text-sm border border-gray-500 py-1.5 px-3 rounded-full"
                     key={skill.id - i}
                   >
                     {skill.name}
@@ -98,7 +98,7 @@ const About = () => {
                     </a>
                   </motion.span>
                   <img
-                    className="pointer-events-auto"
+                    className="pointer-events-auto w-[4rem] sm:w-auto"
                     src={mongo}
                     alt="mongo"
                   />
@@ -126,7 +126,7 @@ const About = () => {
                     </a>
                   </motion.span>
                   <img
-                    className="pointer-events-auto text-black"
+                    className="pointer-events-auto w-[4rem] sm:w-auto text-black"
                     src={express}
                     alt="express"
                   />
@@ -154,7 +154,7 @@ const About = () => {
                     </a>
                   </motion.span>
                   <img
-                    className="pointer-events-auto"
+                    className="pointer-events-auto w-[4rem] sm:w-auto"
                     src={react}
                     alt="react"
                   />
@@ -181,7 +181,11 @@ const About = () => {
                       Node
                     </a>
                   </motion.span>
-                  <img className="pointer-events-auto" src={node} alt="node" />
+                  <img
+                    className="pointer-events-auto w-[4rem] sm:w-auto"
+                    src={node}
+                    alt="node"
+                  />
                   <span className="text-2xl pointer-events-auto text-[#8CC84B] font-semibold">
                     N
                   </span>

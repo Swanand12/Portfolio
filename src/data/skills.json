@@ -3,66 +3,78 @@
     "skills": [
       {
         "id": 1,
-        "name": "#python"
+        "name": "#Python"
       },
       {
         "id": 2,
-        "name": "#react.js"
+        "name": "#React.js"
       },
       {
         "id": 3,
-        "name": "#node.js"
+        "name": "#Next.js"
       },
       {
         "id": 4,
-        "name": "#express.js"
+        "name": "#Node.js"
       },
       {
         "id": 5,
-        "name": "#mongoDB"
+        "name": "#express.js"
       },
       {
         "id": 6,
-        "name": "#html"
+        "name": "#mongoDB"
       },
       {
         "id": 7,
-        "name": "#css"
+        "name": "#PostgreSQL"
       },
       {
         "id": 8,
-        "name": "#javascript"
+        "name": "#prisma"
       },
       {
         "id": 9,
-        "name": "#tailwindCss"
+        "name": "#HTML"
       },
       {
         "id": 10,
-        "name": "#SQL"
+        "name": "#CSS"
       },
       {
         "id": 11,
-        "name": "#redux"
+        "name": "#Javascript"
       },
       {
         "id": 12,
-        "name": "#solidity"
+        "name": "#tailwindCSS"
       },
       {
         "id": 13,
-        "name": "#socket.io"
-      },
-      {
-        "id": 13,
-        "name": "#selenium"
-      },
-      {
-        "id": 13,
-        "name": "#flask"
+        "name": "#SQL"
       },
       {
         "id": 14,
+        "name": "#redux"
+      },
+      {
+        "id": 15,
+        "name": "#solidity"
+      },
+      {
+        "id": 16,
+        "name": "#socket.io"
+      },
+      {
+        "id": 17,
+        "name": "#selenium"
+      },
+      {
+        "id": 18,
+        "name": "#flask"
+      },
+      {
+        "id": 19,
         "name": "#git"
       }
     ]
@@ -76,7 +88,7 @@
       },
       {
         "id": 2,
-        "name": "#node.js"
+        "name": "#Node.js"
       },
       {
         "id": 3,
@@ -88,7 +100,7 @@
       },
       {
         "id": 5,
-        "name": "#tailwind CSS"
+        "name": "#tailwindCSS"
       },
       {
         "id": 6,
@@ -100,7 +112,11 @@
       },
       {
         "id": 8,
-        "name": "#rest API's"
+        "name": "#Gemini LLM"
+      },
+      {
+        "id": 10,
+        "name": "#RAG"
       }
     ]
   },
@@ -254,6 +270,38 @@
       {
         "id": 5,
         "name": "#tailwind CSS"
+      }
+    ]
+  },
+  {
+    "gemmatalks_chatbot": [
+      {
+        "id": 1,
+        "name": "#Next.js"
+      },
+      {
+        "id": 2,
+        "name": "#Node.js"
+      },
+      {
+        "id": 3,
+        "name": "#express.js"
+      },
+      {
+        "id": 4,
+        "name": "#PostgreSQL"
+      },
+      {
+        "id": 5,
+        "name": "#ollama LLM - gemma3:1b model"
+      },
+      {
+        "id": 6,
+        "name": "#prisma"
+      },
+      {
+        "id": 7,
+        "name": "#tailwindCSS"
       }
     ]
   }

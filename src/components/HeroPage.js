@@ -1,17 +1,17 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { FaFileAlt } from "react-icons/fa";
 import { RiWhatsappFill } from "react-icons/ri";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { BiLogoGmail } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
-import logo_white_fill from "../assets/logo_white_fill.png";
-import logo_white from "../assets/logo_white_outline.svg";
-import about from "../assets/about_image.svg";
-import mongo from "../assets/mongo.svg";
-import express from "../assets/express.svg";
-import react from "../assets/react.svg";
-import node from "../assets/node.svg";
+import logo_white_fill from "../assets/logo_white_fill.webp";
+import logo_white from "../assets/logo_white_outline.webp";
+import about from "../assets/about_image.webp";
+import mongo from "../assets/mongo.webp";
+import express from "../assets/express.webp";
+import react from "../assets/react.webp";
+import node from "../assets/node.webp";
 import data from "../data/skills.json";
 import { motion } from "framer-motion";
 import { RxCross1 } from "react-icons/rx";
@@ -302,13 +302,13 @@ const HeroPage = () => {
             animate={{ scale: showAboutModal ? 1 : 0 }}
             transition={{ duration: 0.2 }}
             style={{ transformOrigin: "center" }}
-            className={`xl:w-2/3  rounded-xl my-auto flex  px-14 py-10 bg-[#191919]`}
+            className={`lg:w-3/4  rounded-xl my-auto flex  px-14 py-10 bg-[#191919]`}
           >
             <div className="w-1/2">
               <h1 className="text-primary font-semibold text-2xl tracking-widest">
                 ABOUT ME
               </h1>
-              <p className="py-5 text-[14px] xl:text-sm  font-normal tracking-wide">
+              <p className="py-5 text-[14px] xl:text-[14px]  font-normal ">
                 I'm Swanand Sawant, a Computer Engineering graduate from with
                 practical experience in full-stack development using the MERN
                 stack, along with Python, Flask, SQL, and core web technologies.
@@ -320,16 +320,7 @@ const HeroPage = () => {
                 experiences have strengthened my adaptability, quick learning,
                 and ability to build real-world applications.
               </p>
-              <p className="flex flex-wrap gap-1 pb-5">
-                {data[0]?.skills.map((skill) => (
-                  <p
-                    className="text-[13px] border bg-primary text-black font-semibold border-gray-500 py-1 px-3 rounded-full"
-                    key={skill.id}
-                  >
-                    {skill.name}
-                  </p>
-                ))}
-              </p>
+
               <h1 className=" pb-4 text-primary font-semibold text-2xl tracking-widest">
                 MERN STACK
               </h1>
@@ -521,6 +512,21 @@ const HeroPage = () => {
                 <RxCross1 strokeWidth={1} />
               </button>
               <img src={about} alt="about-image" />
+              <div className="flex items-center flex-col gap-4">
+                <h1 className="text-primary font-semibold text-2xl tracking-widest">
+                  SKILLS
+                </h1>
+                <p className="flex justify-center flex-wrap gap-1 pb-5 px-[2rem]">
+                  {data[0]?.skills.map((skill) => (
+                    <p
+                      className="text-[12px] border bg-primary text-black font-semibold border-gray-500 py-1 px-3 rounded-full"
+                      key={skill.id}
+                    >
+                      {skill.name}
+                    </p>
+                  ))}
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
